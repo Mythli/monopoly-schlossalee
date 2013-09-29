@@ -2,6 +2,7 @@ body {
 	margin: 0px;
 	padding: 0px;
 	overflow: hidden;
+	font-family: sans-serif;
 }
 
 .clearfix:after {
@@ -115,8 +116,8 @@ body {
 }
 
 .fieldList .text {
+	text-transform: uppercase;
 	text-align: center;
-
 }
 
 .fieldList .fieldContent {
@@ -125,6 +126,10 @@ body {
 
 .fieldList .price {
 	height: 60%;
+}
+
+.price .text {
+	padding: 5px;
 }
 
 .descriptionContainer {
@@ -142,12 +147,37 @@ body {
 }
 
 .fieldColor.red {
-	background-color: #E51746;
+	background-color: #FE0000;
 }
 
-.fieldList.top .fieldContent {
+.fieldColor.orange {
+	background-color: #FE9601;
 }
 
-.fieldList.right .fieldContent {
-	-webkit-transform: rotate(90deg);
+.fieldColor.yellow {
+	background-color: #FFF001;
+}
+
+.fieldColor.green {
+	background-color: #3A9509;
+}
+
+.fieldColor.blue {
+	background-color: #013483;
+}
+
+.fieldColor.lightBlue {
+	background-color: #01A2D9;
+}
+
+.fieldColor.brown {
+	background-color: #976713;
+}
+
+.fieldColor.pink {
+	background-color: #FF006C;
+}
+
+.fieldList.top .text {
+	-webkit-transform: rotate(-180deg);
 }
