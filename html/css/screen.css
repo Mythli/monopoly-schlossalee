@@ -1,0 +1,153 @@
+body {
+	margin: 0px;
+	padding: 0px;
+	overflow: hidden;
+}
+
+.clearfix:after {
+	content: " "; /* Older browser do not support empty content */
+	visibility: hidden;
+	display: block;
+	height: 0;
+	clear: both;
+}
+
+#gameContainer {
+	width: 2000px;
+	height: 2000px;
+}
+
+.gameDeckContainer {
+}
+
+.gameDeckContainer.horizontal {
+	margin-left: 10%;
+	height: 10%;
+	width: 80%;
+}
+
+.gameDeckContainer.vertical {
+	float: left;
+	width: 10%;
+	height: 80%;
+}
+
+#gameBoardContainer {
+	position: relative;
+	float: left;
+	width: 80%;
+	height: 80%;
+}
+
+#gameBoard {
+	width: 100%;
+	height: 100%;
+	background-image: url('img/fieldBg.png');
+	border: solid 20px #233E81;
+}
+
+.fieldList {
+	margin: 0px;
+	padding: 0px;
+	list-style: none;
+}
+
+.fieldList.horizontal {
+	height: 15.38%;
+}
+
+.fieldList > li > div {
+	height: 99%;
+	width: 99%;
+
+	border: solid 2px black;
+}
+
+.fieldList.horizontal > li {
+	float: left;
+	width: 7.69%;
+	height: 100%;
+}
+
+.fieldList.horizontal > li > div {
+	border-left: none;
+}
+
+.fieldList.horizontal > li:first-child > div {
+	border: solid 2px black;
+}
+
+.fieldList.horizontal li:first-child,
+.fieldList.horizontal li:last-child {
+	width: 15.38%;
+}
+
+#midContainer {
+	width: 100%;
+	height: 69.2%;
+}
+
+#midContainer .midArea {
+	float: left;
+}
+
+#mid {
+	width: 69.1%;
+	height: 100%;
+}
+
+.fieldList.vertical {
+	width: 15.38%;
+	height: 100%;
+}
+
+.fieldList.vertical > li {
+	width: 100%;
+	height: 11.11%;
+}
+
+.fieldList.vertical > li > div {
+	border-top: none;
+}
+
+.fieldList.vertical > li:last-child > div {
+	border-bottom: none;
+}
+
+.fieldList .text {
+	text-align: center;
+
+}
+
+.fieldList .fieldContent {
+	height: 100%;
+}
+
+.fieldList .price {
+	height: 60%;
+}
+
+.descriptionContainer {
+	width: 100%;
+	height: 40%;
+}
+
+.fieldName {
+	padding: 10px;
+}
+
+.fieldColor {
+	width: 100%;
+	height: 40%;
+}
+
+.fieldColor.red {
+	background-color: #E51746;
+}
+
+.fieldList.top .fieldContent {
+}
+
+.fieldList.right .fieldContent {
+	-webkit-transform: rotate(90deg);
+}

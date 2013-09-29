@@ -1,0 +1,3 @@
+require(["scripts/library/jquery-1.10.2.js"], function(util) {
+	alert('aa');
+});
