@@ -5,6 +5,10 @@ body {
 	font-family: sans-serif;
 }
 
+*, *:before, *:after {
+	-moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+}
+
 .clearfix:after {
 	content: " "; /* Older browser do not support empty content */
 	visibility: hidden;
@@ -14,8 +18,8 @@ body {
 }
 
 #gameContainer {
-	width: 2000px;
-	height: 2000px;
+	width: 2500px;
+	height: 2500px;
 }
 
 .gameDeckContainer {
@@ -44,7 +48,7 @@ body {
 	width: 100%;
 	height: 100%;
 	background-image: url('img/fieldBg.png');
-	border: solid 20px #233E81;
+	border: solid 30px #233E81;
 }
 
 .fieldList {
@@ -54,19 +58,19 @@ body {
 }
 
 .fieldList.horizontal {
-	height: 15.38%;
+	height: 15.38461%;
 }
 
 .fieldList > li > div {
-	height: 99%;
-	width: 99%;
+	height: 100%;
+	width: 100%;
 
 	border: solid 2px black;
 }
 
 .fieldList.horizontal > li {
 	float: left;
-	width: 7.69%;
+	width: 7.692307%;
 	height: 100%;
 }
 
@@ -80,12 +84,12 @@ body {
 
 .fieldList.horizontal li:first-child,
 .fieldList.horizontal li:last-child {
-	width: 15.38%;
+	width: 15.38461%;
 }
 
 #midContainer {
 	width: 100%;
-	height: 69.2%;
+	height: 69.23078%;
 }
 
 #midContainer .midArea {
@@ -93,18 +97,18 @@ body {
 }
 
 #mid {
-	width: 69.1%;
+	width: 69.23078%;
 	height: 100%;
 }
 
 .fieldList.vertical {
-	width: 15.38%;
+	width: 15.38461%;
 	height: 100%;
 }
 
 .fieldList.vertical > li {
 	width: 100%;
-	height: 11.11%;
+	height: 11.1111%;
 }
 
 .fieldList.vertical > li > div {
@@ -138,12 +142,14 @@ body {
 }
 
 .fieldName {
+	height: 60%;
 	padding: 10px;
 }
 
 .fieldColor {
 	width: 100%;
 	height: 40%;
+	border-top: solid 2px black;
 }
 
 .fieldColor.red {
