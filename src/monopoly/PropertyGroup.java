@@ -1,5 +1,5 @@
 package monopoly;
 
-public class PropertyGroup {
+public enum PropertyGroup {
 
 }
