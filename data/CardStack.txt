@@ -1,0 +1,35 @@
+Gemeinschaftskarten:
+	1.Bank-Irrtum zu deinem Gunsten. Ziehe DM 4000 ein.
+	2.Es ist dein Geburtstag. Ziehen von jedem Spieler DM 200 ein.
+	3.Arzt-Kosten. Zahle DM 100.
+	4.Zahle deine Versicherungssumme. DM 1000.
+	5.Zahle an das Krankenhaus. DM 2000.
+	6.Zahle eine Strafe von DM 200 oder nimm eine Ereigniskarte.
+	7.Rücke vor bis auf LOS.
+	8.Gehe zurück nach der Badstrasse.
+	9.Gehe in das Gefängnis. Begib dich direkt dorthin. Gehe nich über Los. Ziehe nich DM 4000 ein.
+	10.Du kommst aus dem Gefängnis frei. Diese Karte muss behalten werden bis sie gebraucht oder verkauft wird.
+	
+Ereigniskarten:
+	1.Rücke vor bis zur Schlossallee.
+	2.Gehe 3 Felder zurück.
+	3.Rücke vor bis zum Opernplatz. Wenn du über Los kommst ziehe DM 4000 ein.
+	4.Du wirst zu Strassenausbesserungsarbeiten herangezogen. Zahle für deine Häuser und Hotels
+			-DM 800 je Haus
+			-DM 2300 je Hotel
+		an die Bank.
+	5.Lasse alle Deine Häuser renovieren
+		Zahle an die Bank
+			-für jedes Haus DM 500
+			-für jedes Hotel DM 2000
+	6.Zahle Schulgeld DM 3000
+	7.Betrunken im Dienst. Strafe DM 400
+	8.Strafe für zu schnelles Fahren. DM 300.
+	9.Miete und Anleihzinsen werden fällig. Die Bank zahlt Dir DM 3000.
+	10.Du hast in einem Kreuzworträtsel-Wettbewerb gewonnen. Ziehe DM 2000 ein.
+	11.Mache einen Ausflug nach dem West-Bahnhof, und wenn du über Los kommst, ziehe DM 4000 ein.
+	12.Rücke vor bis zur Seestrasse. Wenn du über Los kommst, ziehe DM 4000 ein.
+	13.Gehe in das Gefängnis. Begib dich direkt dorthin. Gehe nicht über Los. Ziehe nicht DM 4000 ein.
+	14.Rücke bis auf Los vor.
+	15.Du kommst aus dem Gefängnis frei. Diese Karte muss behalten werden, bis sie gebraucht oder verkauft wird.
+	16.Die Bank zahlt Dir eine Dividende von DM 1000.
