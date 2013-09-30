@@ -2,22 +2,22 @@ package monopoly;
 
 public class Bank extends Participant {
 
-	@Override
 	public int getCurrentMoney() {
-		// TODO Auto-generated method stub
-		return 0;
+		return 9999999;
 	}
 
-	@Override
 	public void giveMoneyToParticipant(Participant player, int amount) {
-		// TODO Auto-generated method stub
+		player.addMoney(amount);
+	}
 
+	public void addMoney(int value) {
+		//
 	}
 
 	@Override
-	public void addMoney(int value) {
+	public void removeMoney(int value) throws Exception {
 		// TODO Auto-generated method stub
-
+		
 	}
 
 }
