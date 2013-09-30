@@ -1,6 +1,6 @@
 package monopoly;
 
-public class PropertyField {
+public class PropertyField extends Field implements ITransactionField{
 	
 	 private double getPrice ()
 	 {
@@ -16,7 +16,16 @@ public class PropertyField {
 	 }
 	 public PropertyGroup getGroup ()
 	 {
-		 
+		 return null;
 	 }
+	 public boolean groupComplete ()
+	 {
+		 return true;
+	 }
+	@Override
+	public void calculateTransaction() {
+		// TODO Auto-generated method stub
+		
+	}
 
 }
