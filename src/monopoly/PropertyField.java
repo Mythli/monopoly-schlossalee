@@ -2,11 +2,16 @@ package monopoly;
 
 public class PropertyField extends Field implements ITransactionField{
 	
-	 private double getPrice ()
+	
+	
+	 public PropertyField(PropertyData propertyData) {
+		super(propertyData);	
+	}
+	 public double getPrice ()
 	 {
 		 return 0.0;
 	 }
-	 private Player getOwner ()
+	 protected Player getOwner ()
 	 {
 		 return null;
 	 }
