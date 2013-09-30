@@ -14,7 +14,19 @@ public class Street extends PropertyField {
 	
 	public void OnEnter()
 	{
-		
+		// Check the Owner
+		if (this.getOwner() == null)
+		{
+			//Street is buyable
+		}
+		else if (this.getOwner() != Monopoly.getGameBoard().getCurrentPlayer())
+		{
+			
+		}
+		else
+		{
+			//Person have to pay
+		}
 	}
 	
 	
