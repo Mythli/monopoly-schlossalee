@@ -13,12 +13,18 @@ public class PropertyField extends Field implements ITransactionField{
 	 {
 		 return 0.0;
 	 }
+	 public boolean isBuyable ()
+	 {
+		 if (this.getOwner() == null)
+			 return true;
+		 return false;
+	 }
 	 protected Player getOwner ()
 	 {
 		 return null;
 	 }
 	 public void onEnter ()
-	 {
+	 { 
 		 
 	 }
 	 public PropertyGroup getGroup ()
@@ -36,7 +42,7 @@ public class PropertyField extends Field implements ITransactionField{
 		boolean isComplete = true;
 		Player player = null;
 		
-		for (Field field : Monopoly.getGameBoard().GetAllFields())
+		for (Field field : Monopoly.getGameBoard().getAllFields())
 		{
 			if (field.property.getPropertyGroup().equals(this.getGroup()))
 			{
@@ -74,7 +80,7 @@ public class PropertyField extends Field implements ITransactionField{
 	private ArrayList<Field> getPlayersGroupFields(Player player, PropertyGroup group)
 	{
 		ArrayList<Field> groupFieldList = new ArrayList<>();
-		for (Field field : Monopoly.getGameBoard().GetAllFields())
+		for (Field field : Monopoly.getGameBoard().getAllFields())
 		{
 			if (field.property.getPropertyGroup().equals(group))
 			{
