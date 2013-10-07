@@ -1,0 +1,4 @@
+TODO:
+
+- Eigene Exceptions anlegen (z.B. OutOfMoneyException)
+- Startgelder aus der Config auslesen
