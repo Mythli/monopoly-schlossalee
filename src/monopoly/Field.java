@@ -17,5 +17,5 @@ public class Field {
 	public void calculateTransaction() {
 		// TODO Auto-generated method stub
 		
-	}
+	}	
 }

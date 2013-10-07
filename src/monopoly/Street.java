@@ -23,10 +23,6 @@ public class Street extends PropertyField {
 		{
 			
 		}
-		else
-		{
-			//Person have to pay
-		}
 	}
 	
 	
