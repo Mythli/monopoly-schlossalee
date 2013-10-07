@@ -41,5 +41,14 @@ public class GameBoard {
 	public Player getCurrentPlayer() {
 		return players.get(currentPlayer);
 	}
+	
+	/***
+	 * Beendet den Spielzug des aktuellen Spielers
+	 */
+	public void endMove(){
+		currentPlayer++;
+		if(currentPlayer > players.size() - 1)
+			currentPlayer = 0;
+	}
 
 }
