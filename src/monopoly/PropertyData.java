@@ -10,6 +10,7 @@ public class PropertyData {
 	private PropertyGroup propertyGroup;
 	private int hypothek;
 	private ArrayList<Integer> rentPrices;
+	private int housePrice;
 
 	public String getName() {
 		return name;
@@ -57,6 +58,14 @@ public class PropertyData {
 
 	public void setRentPrices(ArrayList<Integer> rentPrices) {
 		this.rentPrices = rentPrices;
+	}
+	
+	public int getHousePrice() {
+		return housePrice;
+	}
+
+	public void setHousePrice(int housePrice) {
+		this.housePrice = housePrice;
 	}
 
 }
