@@ -7,7 +7,16 @@ public class GameBoard {
 	private ArrayList<Player> players = new ArrayList<Player>();
 	private ArrayList<Field> fields = new ArrayList<Field>();
 	private int currentPlayer;
-
+	private int lastRoll;
+		
+	public GameBoard() {
+		
+	}
+	
+	public int getLastRoll() {
+		return lastRoll;
+	}
+	
 	/***
 	 * Gibt die Liste aller teilnehmenden Spieler zurück
 	 * @return
@@ -20,13 +29,13 @@ public class GameBoard {
 	 * Gibt die Liste alle Spielfelder zurück
 	 * @return
 	 */
-	public ArrayList<Field> GetAllFields() {
+	public ArrayList<Field> getAllFields() {
 		return fields;
 	}
-
+	
 	/***
 	 * Fügt den angegebenen Spieler dem Spielfeld hinzu
-	 * @param player
+	 * @param player Der hinzuzufügende Spieler
 	 */
 	public void addPlayer(Player player) {
 		if (!players.contains(player)) {
