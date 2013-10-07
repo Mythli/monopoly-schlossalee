@@ -6,18 +6,16 @@ public class Bank extends Participant {
 		return 9999999;
 	}
 
-	public void giveMoneyToParticipant(Participant player, int amount) {
+	public void transferMoneyToParticipant(Participant player, int amount) {
 		player.addMoney(amount);
 	}
 
 	public void addMoney(int value) {
-		//
+		// Keine Funktion
 	}
 
 	@Override
 	public void removeMoney(int value) throws Exception {
-		// TODO Auto-generated method stub
-		
+		// Keine Funktion
 	}
-
 }
