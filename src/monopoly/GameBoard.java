@@ -10,7 +10,7 @@ public class GameBoard {
 	private Dice dice;
 
 	/***
-	 * Konstruktor
+	 * Erstellt eine Instanz der Klasse GameBoard
 	 */
 	public GameBoard() {
 		dice = new Dice();

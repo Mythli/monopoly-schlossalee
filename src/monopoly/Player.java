@@ -6,16 +6,28 @@ public class Player extends Participant {
 	private int currentMoney;
 	private int position;
 
+	/***
+	 * Erstellt eine Instanz der Klasse Player mit dem angegebenen Namen
+	 * @param name
+	 */
 	public Player(String name) {
 		setName(name);
 		// TODO: Startgelder aus einer Config lesen!
 		this.currentMoney = 15000;
 	}
 
+	/***
+	 * Gibt den Namen des Spielers zurück
+	 * @return
+	 */
 	public String getName() {
 		return name;
 	}
 
+	/***
+	 * Benennt den Spieler mit dem angegebenen Namen um
+	 * @param name
+	 */
 	public void setName(String name) {
 		this.name = name;
 	}
@@ -71,16 +83,23 @@ public class Player extends Participant {
 		return Monopoly.getGameBoard().getAllFields().get(this.position);
 	}
 	
+	/***
+	 * Bewegt den aktuellen Spieler auf ein bestimmtes Feld
+	 * @param field
+	 */
 	public void move(Field field) {
 		this.position = field.property.getPosition();
 	}
 
+	/***
+	 * Bewegt den aktuellen Spieler um den angegebenen Wert weiter
+	 * @param value
+	 */
 	public void move(int value) {
 		this.position += value;
 		int diff = Monopoly.getGameBoard().getAllFields().size() - this.position;
 		
 		if(diff > 0)
 			this.position += diff;
-		
-	}
-}
+			}
+    }
