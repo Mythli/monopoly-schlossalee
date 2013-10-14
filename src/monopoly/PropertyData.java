@@ -11,6 +11,7 @@ public class PropertyData {
 	private int hypothek;
 	private ArrayList<Integer> rentPrices;
 	private int housePrice;
+	private int transactionAmount;
 
 	public String getName() {
 		return name;
@@ -66,6 +67,14 @@ public class PropertyData {
 
 	public void setHousePrice(int housePrice) {
 		this.housePrice = housePrice;
+	}
+	
+	public int getTransactionAmount() {
+		return transactionAmount;
+	}
+
+	public void setTransactionAmount(int transactionAmount) {
+		this.transactionAmount = transactionAmount;
 	}
 
 }

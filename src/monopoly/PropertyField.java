@@ -23,7 +23,7 @@ public class PropertyField extends Field implements ITransactionField{
 	 }
 	 public PropertyGroup getGroup ()
 	 {
-		 getPlayersGroupFields(this.getOwner(), PropertyGroup.DUNKELBLAU);
+		 //getPlayersGroupFields(this.getOwner(), PropertyGroup.DUNKELBLAU);
 		 return null;
 	 }
 	 

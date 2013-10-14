@@ -1,15 +1,14 @@
 package monopoly;
 
 public enum PropertyGroup {
-	
-	DUNKELBLAU,
+	BRAUN,
 	HELLBLAU,
-	VIOLETT,
+	PINK,
 	ORANGE,
 	ROT,
 	GELB,
-	GRUEN,
+	GRÜN,
 	BLAU,
-	BAHNHOF,
-	WERK;
+	WERK,
+	BAHNHOF
 }

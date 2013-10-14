@@ -50,5 +50,10 @@ public class GameBoard {
 		if(currentPlayer > players.size() - 1)
 			currentPlayer = 0;
 	}
+	
+	public static void main(String[] args) throws Exception {
+		GameBoard gameBoard = new GameBoard();
+		gameBoard.fields = DataLoader.loadFields();
+	}
 
 }

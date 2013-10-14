@@ -1,8 +1,8 @@
 package monopoly;
 
-public class Trainstation extends PropertyField{
+public class TrainStation extends PropertyField{
 
-	public Trainstation(PropertyData propertyData) {
+	public TrainStation(PropertyData propertyData) {
 		super(propertyData);
 		// TODO Auto-generated constructor stub
 	}

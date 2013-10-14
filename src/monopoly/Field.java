@@ -11,7 +11,7 @@ public class Field {
 
 	public void onEnter ()
 	{
-	
+		System.out.println("onEnter");
 	}
 
 	public void calculateTransaction() {
