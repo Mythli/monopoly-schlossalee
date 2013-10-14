@@ -27,9 +27,9 @@ public class SupplyStation extends PropertyField {
 
 	private int CalculateRent() {
 		if (this.groupComplete()) {
-			return Monopoly.getGameBoard().getLastRoll() * 200;
+			return Monopoly.getGameBoard().getDice().getLastRoll() * 200;
 		} else {
-			return Monopoly.getGameBoard().getLastRoll() * 80;
+			return Monopoly.getGameBoard().getDice().getLastRoll() * 80;
 		}
 	}
 
