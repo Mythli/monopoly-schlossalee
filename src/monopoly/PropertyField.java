@@ -1,17 +1,18 @@
 package monopoly;
 
+
 import java.util.ArrayList;
 
 public class PropertyField extends Field implements ITransactionField{
 	
-	
+	 Player owner;
 	
 	 public PropertyField(PropertyData propertyData) {
 		super(propertyData);	
 	}
-	 public double getPrice ()
+	 public int getPrice ()
 	 {
-		 return 0.0;
+		 return this.property.getPrice();
 	 }
 	 public boolean isBuyable ()
 	 {
@@ -21,7 +22,11 @@ public class PropertyField extends Field implements ITransactionField{
 	 }
 	 protected Player getOwner ()
 	 {
-		 return null;
+			return this.owner; 
+	 }
+	 protected void setOwner (Player owner)
+	 {
+		 this.owner = owner;
 	 }
 	 public void onEnter ()
 	 { 
@@ -29,15 +34,15 @@ public class PropertyField extends Field implements ITransactionField{
 	 }
 	 public PropertyGroup getGroup ()
 	 {
-		 //getPlayersGroupFields(this.getOwner(), PropertyGroup.DUNKELBLAU);
-		 return null;
+		 return this.property.getPropertyGroup();
 	 }
 	 
 	 /**
 	  * Ist die Gruppe zu dem Feld komplett.
 	  * @return
+	 * @throws OwnerNotImplementedException 
 	  */
-	 public boolean groupComplete ()
+	 public boolean groupComplete () 
 	 {
 		boolean isComplete = true;
 		Player player = null;
@@ -73,7 +78,8 @@ public class PropertyField extends Field implements ITransactionField{
 	 }
 	@Override
 	public void calculateTransaction() {
-		// TODO Auto-generated method stub
+		
+		
 		
 	}
 	
