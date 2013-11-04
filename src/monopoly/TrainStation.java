@@ -1,10 +1,10 @@
 package monopoly;
 
-public class Trainstation extends PropertyField {
+public class TrainStation extends PropertyField {
 
 	private int[] rentPrices = new int[] { 500, 1000, 2000, 4000 };
 
-	public Trainstation(PropertyData propertyData) {
+	public TrainStation(PropertyData propertyData) {
 		super(propertyData);
 		// TODO Auto-generated constructor stub
 	}
