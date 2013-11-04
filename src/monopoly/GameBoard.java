@@ -7,13 +7,12 @@ public class GameBoard {
 	private ArrayList<Player> players = new ArrayList<Player>();
 	private ArrayList<Field> fields = new ArrayList<Field>();
 	private int currentPlayer;
-	private Dice dice;
+	private Dice dice = new Dice();;
 
 	/***
 	 * Erstellt eine Instanz der Klasse GameBoard
 	 */
 	public GameBoard() {
-		dice = new Dice();
 	}
 
 	/***
