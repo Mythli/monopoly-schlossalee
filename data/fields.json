@@ -55,7 +55,7 @@
 		}
 	},
 	{
-		"className": "TrainStation",
+		"className": "Trainstation",
 		"data": {
 			"name": "Südbahnhof",
 			"price": 4000
@@ -188,7 +188,7 @@
 		}
     },
 	{
-		"className": "TrainStation",	
+		"className": "Trainstation",	
 		"data": {
 			"name": "Westbahnhof",
 			"price": 4000
@@ -321,7 +321,7 @@
 		}
     },
 	{
-		"className": "TrainStation",
+		"className": "Trainstation",
 		"data": {
 			"name": "Nordbahnhof",
 			"price": 4000
@@ -455,7 +455,7 @@
 		}
     },
 	{
-		"className": "TrainStation",
+		"className": "Trainstation",
 		"data": {
 			"name": "Hauptbahnhof",
 			"price": 4000

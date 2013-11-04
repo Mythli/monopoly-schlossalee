@@ -14,9 +14,9 @@ public class DataLoader {
 	
 	@JsonIgnoreProperties(ignoreUnknown = true)
 	
-	public static ArrayList<Field> loadFields() throws Exception {
+	public static GameBoard load() throws Exception {		
 		
-		ArrayList<Field> fields = new ArrayList<Field>();
+		ArrayList<Field> fields = new ArrayList<Field>();		
 		
 		ObjectMapper mapper = new ObjectMapper();
 		SerializedField[] rawFields = mapper.readValue(new File("data/fields.json"), SerializedField[].class);		
@@ -28,8 +28,8 @@ public class DataLoader {
 				fields.add(new CardStack(rawField.data));
 			else if (rawField.className.equals("ActionField"))
 				fields.add(new ActionField(rawField.data));
-			else if (rawField.className.equals("TrainStation"))
-				fields.add(new TrainStation(rawField.data));
+			else if (rawField.className.equals("Trainstation"))
+				fields.add(new Trainstation(rawField.data));
 			else if (rawField.className.equals("SupplyStation"))
 				fields.add(new SupplyStation(rawField.data));
 			else if (rawField.className.equals("Prison"))
@@ -40,10 +40,9 @@ public class DataLoader {
 				throw new Exception("Unknown field type " + rawField.className);
 		}
 		
-		for (Field field : fields)
-			System.out.println(field.getClass().getSimpleName());
+		GameBoard gameBoard = new GameBoard(fields);
 		
-		return fields;		
+		return gameBoard;		
 	}
 
 }

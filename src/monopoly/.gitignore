@@ -26,3 +26,17 @@
 /CardStack.class
 /EventField.class
 /TrainStation.class
+/CommunityChestCard.class
+/ChanceCard.class
+/ChanceCardField.class
+/CommunityChestCardField.class
+/Random.class
+/CardDataLoader.class
+/SerializedCard.class
+/actionData.class
+/CardData.class
+/ActionData.class
+/Card.class
+/GetOutOfJailCard.class
+/CommunityChestCards.class
+/CardCollection.class

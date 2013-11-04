@@ -1,0 +1,121 @@
+[
+	{
+		"text": "Die Jahresrente wird fällig. Ziehe 2000 DM ein",
+		"action": {
+			"type": "transaction",
+			"amount": 2000
+		}	
+	}, 
+	{
+		"text": "Du erbst 2000 DM",
+		"action": {
+			"type": "transaction",
+			"amount": 2000
+		}	
+	},
+	{
+		"text": "Du erhälst aus Vorzugsaktien 7% Dividende -  500 DM",
+		"action": {
+			"type": "transaction",
+			"amount": 500
+		}	
+	},
+	{
+		"text": "Einkommenssteuer-Rückzahlung. Ziehe 400 DM ein",
+		"action": {
+			"type": "transaction",
+			"amount": 400
+		}	
+	},
+	{
+		"text": "Du hast den 2. Platz in einem Schönheitswettbewerb gewonnen. Ziehe 200 DM ein",
+		"action": {
+			"type": "transaction",
+			"amount": 200
+		}	
+	},
+	{
+		"text": "Aus Lagerverkäufen erhälst du 100 DM.",
+		"action": {
+			"type": "transaction",
+			"amount": 100
+		}	
+	},
+	{
+		"text": "Du kommst aus dem Gefängnis frei. Diese Karte kann verkauft werden.",
+		"action": {
+			"type": "custom",
+			"method": "getOutOfJail"
+		}	
+	},
+	{
+		"text": "Gehe in das Gefängnis. Begib dich direkt dorthin, gehe nicht über LOS, ziehe nicht 4000 DM ein.",
+		"action": {
+			"type": "custom",
+			"method": "goToJail"
+		}	
+	},
+	{
+		"text": "Gehe zurück nach der Badstraße",
+		"action": {
+			"type": "custom",
+			"method": "goToBadstraße"
+		}	
+	},
+	{
+		"text": "Rücke vor bis auf LOS.",
+		"action": {
+			"type": "custom",
+			"method": "goToStart"
+		}	
+	},
+	{
+		"text": "Zahle eine Strafe von 200 DM oder nimm eine Ereigniskarte.",
+		"action": {
+			"type": "custom",
+			"method": "payOrDraw"
+		}	
+	},
+	{
+		"text": "Zahle an das Krankenhaus 2000 DM.",
+		"action": {
+			"type": "custom",
+			"method": "goToStart"
+		}	
+	},
+	{
+		"text": "Zahle an das Krankenhaus 2000 DM.",
+		"action": {
+			"type": "transaction",
+			"amount": -2000
+		}	
+	},
+	{
+		"text": "Zahle deine Versicherungssumme 1000 DM.",
+		"action": {
+			"type": "transaction",
+			"amount": -1000
+		}	
+	},
+	{
+		"text": "Arztkosten 100 DM",
+		"action": {
+			"type": "transaction",
+			"amount": -1000
+		}	
+	},
+	{
+		"text": "Es ist dein Geburtstag, ziehe von jedem Spieler 200 DM ein",
+		"action": {
+			"type": "custom",
+			"method": "collectMoney"
+		}	
+	},
+	{
+		"text": "Bankirrtum zu deinen Gunsten, ziehe 4000 DM ein",
+		"action": {
+			"type": "transaction",
+			"amount": 4000
+		}	
+	}
+]

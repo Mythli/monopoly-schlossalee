@@ -12,7 +12,8 @@ public class GameBoard {
 	/***
 	 * Erstellt eine Instanz der Klasse GameBoard
 	 */
-	public GameBoard() {
+	public GameBoard(ArrayList<Field> fields) {
+		this.fields = fields;
 		dice = new Dice();
 	}
 
@@ -71,11 +72,6 @@ public class GameBoard {
 		currentPlayer++;
 		if (currentPlayer > players.size() - 1)
 			currentPlayer = 0;
-	}
-	
-	public static void main(String[] args) throws Exception {
-		GameBoard gameBoard = new GameBoard();
-		gameBoard.fields = DataLoader.loadFields();
 	}
 
 }
