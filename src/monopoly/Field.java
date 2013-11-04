@@ -1,5 +1,7 @@
 package monopoly;
 
+
+
 public class Field {
 
 	protected PropertyData property;
@@ -11,11 +13,6 @@ public class Field {
 
 	public void onEnter ()
 	{
-		System.out.println("onEnter");
+		//Mach nichts!
 	}
-
-	public void calculateTransaction() {
-		// TODO Auto-generated method stub
-		
-	}	
 }

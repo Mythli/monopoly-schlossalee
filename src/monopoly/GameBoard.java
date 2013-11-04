@@ -7,14 +7,12 @@ public class GameBoard {
 	private ArrayList<Player> players = new ArrayList<Player>();
 	private ArrayList<Field> fields = new ArrayList<Field>();
 	private int currentPlayer;
-	private Dice dice;
+	private Dice dice = new Dice();;
 
 	/***
 	 * Erstellt eine Instanz der Klasse GameBoard
 	 */
-	public GameBoard(ArrayList<Field> fields) {
-		this.fields = fields;
-		dice = new Dice();
+	public GameBoard() {
 	}
 
 	/***
@@ -74,4 +72,10 @@ public class GameBoard {
 			currentPlayer = 0;
 	}
 
+	public Player getPlayerByName(String name) {
+		for (Player p : players)
+			if (p.getName().equals(name))
+				return p;
+		return null;
+	}
 }
