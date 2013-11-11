@@ -13,7 +13,9 @@ public class Monopoly {
 	}
 	
 	public static void main(String[] args) throws Exception {
-		initialize();
+		initialize(); 
+		
+		Test.test();
 		
 		/*
 		for (Object o : gameboard.getAllFields())

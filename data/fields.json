@@ -124,7 +124,10 @@
 		}
     },
 	{
-		"className": "Prison"
+		"className": "Prison",
+		"data": {
+			"name": "Gefängnis"
+		}
 	},	
     {
 		"className": "Street",
