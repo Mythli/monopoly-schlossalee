@@ -29,7 +29,7 @@ public class DataLoader {
 			else if (rawField.className.equals("ActionField"))
 				fields.add(new ActionField(rawField.data));
 			else if (rawField.className.equals("Trainstation"))
-				fields.add(new Trainstation(rawField.data));
+				fields.add(new TrainStation(rawField.data));
 			else if (rawField.className.equals("SupplyStation"))
 				fields.add(new SupplyStation(rawField.data));
 			else if (rawField.className.equals("Prison"))

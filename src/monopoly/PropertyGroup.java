@@ -7,7 +7,7 @@ public enum PropertyGroup {
 	ORANGE,
 	ROT,
 	GELB,
-	GRÜN,
+	GRÃœN,
 	BLAU,
 	WERK,
 	BAHNHOF

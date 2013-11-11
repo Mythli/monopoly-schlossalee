@@ -12,11 +12,12 @@ public class GameBoard {
 	/***
 	 * Erstellt eine Instanz der Klasse GameBoard
 	 */
-	public GameBoard() {
+	public GameBoard(ArrayList<Field> fields) {
+		this.fields = fields;
 	}
 
 	/***
-	 * Gibt die Instanz des Würfels zurück
+	 * Gibt die Instanz des Wï¿½rfels zurï¿½ck
 	 * 
 	 * @return
 	 */
@@ -25,7 +26,7 @@ public class GameBoard {
 	}
 
 	/***
-	 * Gibt die Liste aller teilnehmenden Spieler zurück
+	 * Gibt die Liste aller teilnehmenden Spieler zurï¿½ck
 	 * 
 	 * @return
 	 */
@@ -34,7 +35,7 @@ public class GameBoard {
 	}
 
 	/***
-	 * Gibt die Liste alle Spielfelder zurück
+	 * Gibt die Liste alle Spielfelder zurï¿½ck
 	 * 
 	 * @return
 	 */
@@ -43,10 +44,10 @@ public class GameBoard {
 	}
 
 	/***
-	 * Fügt den angegebenen Spieler dem Spielfeld hinzu
+	 * Fï¿½gt den angegebenen Spieler dem Spielfeld hinzu
 	 * 
 	 * @param player
-	 *            Der hinzuzufügende Spieler
+	 *            Der hinzuzufï¿½gende Spieler
 	 */
 	public void addPlayer(Player player) {
 		if (!players.contains(player)) {
@@ -55,7 +56,7 @@ public class GameBoard {
 	}
 
 	/***
-	 * Gibt den Spieler zurück, welcher aktuell an der Reihe ist
+	 * Gibt den Spieler zurï¿½ck, welcher aktuell an der Reihe ist
 	 * 
 	 * @return
 	 */
