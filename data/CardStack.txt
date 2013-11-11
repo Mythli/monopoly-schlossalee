@@ -7,7 +7,7 @@ Gemeinschaftskarten:
 	6.Zahle eine Strafe von DM 200 oder nimm eine Ereigniskarte.
 	7.Rücke vor bis auf LOS.
 	8.Gehe zurück nach der Badstrasse.
-	9.Gehe in das Gefängnis. Begib dich direkt dorthin. Gehe nich über Los. Ziehe nich DM 4000 ein.
+	9.Gehe in das Gefängnis. Begib dich direkt dorthin. Gehe nicht über Los. Ziehe nich DM 4000 ein.
 	10.Du kommst aus dem Gefängnis frei. Diese Karte muss behalten werden bis sie gebraucht oder verkauft wird.
 	
 Ereigniskarten:

@@ -2,11 +2,11 @@ package monopoly;
 
 public class CommunityChestCardField extends CardStack {
 
-	private CardCollection cardCollection;	
+	private cards_classes.CardCollection cardCollection;	
 
 	CommunityChestCardField(PropertyData propertyData) throws Exception {
 		super(propertyData);
-		cardCollection = CardDataLoader.load("community_chest_cards.json");		
+		cardCollection = cards_classes.CardDataLoader.load("community_chest_cards.json");		
 	}
 	
 }

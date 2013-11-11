@@ -1,121 +1,118 @@
 [
 	{
-		"text": "Die Jahresrente wird fällig. Ziehe 2000 DM ein",
-		"action": {
-			"type": "transaction",
+		"className": "TransactionCard",
+		"data": {
+			"text": "Die Jahresrente wird fällig. Ziehe 2000 DM ein",
 			"amount": 2000
-		}	
-	}, 
-	{
-		"text": "Du erbst 2000 DM",
-		"action": {
-			"type": "transaction",
-			"amount": 2000
-		}	
+		}
 	},
 	{
-		"text": "Du erhälst aus Vorzugsaktien 7% Dividende -  500 DM",
-		"action": {
-			"type": "transaction",
+		"className": "TransactionCard",
+		"data": {
+			"text": "Du erbst 2000 DM",
+			"amount": 2000
+		}
+	},
+	{
+		"className": "TransactionCard",
+		"data": {
+			"text": "Du erhälst aus Vorzugsaktien 7% Dividende -  500 DM",
 			"amount": 500
-		}	
+		}
 	},
 	{
-		"text": "Einkommenssteuer-Rückzahlung. Ziehe 400 DM ein",
-		"action": {
-			"type": "transaction",
+		"className": "TransactionCard",
+		"data": {
+			"text": "Einkommenssteuer-Rückzahlung. Ziehe 400 DM ein",
 			"amount": 400
-		}	
+		}
 	},
 	{
-		"text": "Du hast den 2. Platz in einem Schönheitswettbewerb gewonnen. Ziehe 200 DM ein",
-		"action": {
-			"type": "transaction",
+		"className": "TransactionCard",
+		"data": {
+			"text": "Du hast den 2. Platz in einem Schönheitswettbewerb gewonnen. Ziehe 200 DM ein",
 			"amount": 200
-		}	
+		}
 	},
 	{
-		"text": "Aus Lagerverkäufen erhälst du 100 DM.",
-		"action": {
-			"type": "transaction",
+		"className": "TransactionCard",
+		"data": {
+			"text": "Aus Lagerverkäufen erhälst du 100 DM.",
 			"amount": 100
-		}	
+		}
 	},
 	{
-		"text": "Du kommst aus dem Gefängnis frei. Diese Karte kann verkauft werden.",
-		"action": {
-			"type": "custom",
-			"method": "getOutOfJail"
-		}	
+		"className": "GetOutOfJailCard",
+		"data": {
+			"text": "Du kommst aus dem Gefängnis frei. Diese Karte kann verkauft werden."
+		}
 	},
 	{
-		"text": "Gehe in das Gefängnis. Begib dich direkt dorthin, gehe nicht über LOS, ziehe nicht 4000 DM ein.",
-		"action": {
-			"type": "custom",
-			"method": "goToJail"
-		}	
+		"className": "GoToCard",
+		"data": {
+			"text": "Gehe in das Gefängnis. Begib dich direkt dorthin, gehe nicht über LOS, ziehe nicht 4000 DM ein.",
+			"to": "jail"
+		}
 	},
 	{
-		"text": "Gehe zurück nach der Badstraße",
-		"action": {
-			"type": "custom",
-			"method": "goToBadstraße"
-		}	
+		"className": "GoToCard",
+		"data": {
+			"text": "Gehe zurück nach der Badstraße",
+			"to": "Badstraße"
+		}
 	},
 	{
-		"text": "Rücke vor bis auf LOS.",
-		"action": {
-			"type": "custom",
-			"method": "goToStart"
-		}	
+		"className": "GoToCard",
+		"data": {
+			"text": "Rücke vor bis auf LOS.",
+			"to": "start"
+		}
 	},
 	{
-		"text": "Zahle eine Strafe von 200 DM oder nimm eine Ereigniskarte.",
-		"action": {
-			"type": "custom",
-			"method": "payOrDraw"
-		}	
+		"className": "PayOrDrawCard",
+		"data": {
+			"text": "Zahle eine Strafe von 200 DM oder nimm eine Ereigniskarte."
+		}
 	},
 	{
-		"text": "Zahle an das Krankenhaus 2000 DM.",
-		"action": {
-			"type": "custom",
-			"method": "goToStart"
-		}	
+		"className": "GoToCard",
+		"data": {
+			"text": "Rücke vor bis auf LOS.",
+			"to": "start"
+		}
 	},
 	{
-		"text": "Zahle an das Krankenhaus 2000 DM.",
-		"action": {
-			"type": "transaction",
+		"className": "TransactionCard",
+		"data": {
+			"text": "Zahle an das Krankenhaus 2000 DM.",
 			"amount": -2000
-		}	
+		}
 	},
 	{
-		"text": "Zahle deine Versicherungssumme 1000 DM.",
-		"action": {
-			"type": "transaction",
+		"className": "TransactionCard",
+		"data": {
+			"text": "Zahle deine Versicherungssumme 1000 DM.",
 			"amount": -1000
-		}	
+		}
 	},
 	{
-		"text": "Arztkosten 100 DM",
-		"action": {
-			"type": "transaction",
+		"className": "TransactionCard",
+		"data": {
+			"text": "Arztkosten 100 DM",
 			"amount": -1000
-		}	
+		}
 	},
 	{
-		"text": "Es ist dein Geburtstag, ziehe von jedem Spieler 200 DM ein",
-		"action": {
-			"type": "custom",
-			"method": "collectMoney"
-		}	
+		"className": "CollectMoneyCard",
+		"data": {
+			"text": "Es ist dein Geburtstag, ziehe von jedem Spieler 200 DM ein"
+		}
 	},
 	{
-		"text": "Bankirrtum zu deinen Gunsten, ziehe 4000 DM ein",
-		"action": {
-			"type": "transaction",
+		"className": "TransactionCard",
+		"data": {
+			"text": "Bankirrtum zu deinen Gunsten, ziehe 4000 DM ein",
 			"amount": 4000
-		}	
+		}
 	}
 ]

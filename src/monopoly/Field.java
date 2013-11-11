@@ -4,7 +4,7 @@ package monopoly;
 
 public class Field {
 
-	protected PropertyData property;
+	public PropertyData property;
 	
 	public Field (PropertyData propertyData)
 	{
