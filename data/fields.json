@@ -28,7 +28,7 @@
 		"data": {
 			"name": "Gemeinschaftsfeld"
 		}
-	},	
+	},
     {
 		"className": "Street",
 		"data": {
@@ -59,8 +59,8 @@
 		"data": {
 			"name": "Südbahnhof",
 			"price": 4000
-		}	
-	},	
+		}
+	},
     {
 		"className": "Street",
 		"data": {
@@ -124,8 +124,11 @@
 		}
     },
 	{
-		"className": "Prison"
-	},	
+		"className": "Prison",
+		"data": {
+			"name": "Gefängnis"
+		}
+	},
     {
 		"className": "Street",
 		"data": {
@@ -188,7 +191,7 @@
 		}
     },
 	{
-		"className": "Trainstation",	
+		"className": "Trainstation",
 		"data": {
 			"name": "Westbahnhof",
 			"price": 4000
@@ -216,7 +219,7 @@
 		"className": "CardStack",
 		"data": {
 			"name": "Gemeinschaftsfeld"
-		}	
+		}
 	},
     {
 		"className": "Street",
@@ -282,7 +285,7 @@
 		"className": "CardStack",
 		"data": {
 			"name": "Ereignisfeld"
-		}	
+		}
 	},
     {
 		"className": "Street",
@@ -325,7 +328,7 @@
 		"data": {
 			"name": "Nordbahnhof",
 			"price": 4000
-		}	
+		}
 	},
     {
 		"className": "Street",
@@ -368,7 +371,7 @@
 		"data": {
 			"name": "Wasserwerk",
 			"price": 3000
-		}	
+		}
 	},
     {
 		"className": "Street",
@@ -434,8 +437,8 @@
 		"className": "CardStack",
 		"data": {
 			"name": "Gemeinschaftsfeld"
-		}	
-	},	
+		}
+	},
     {
 		"className": "Street",
 		"data": {
@@ -459,13 +462,13 @@
 		"data": {
 			"name": "Hauptbahnhof",
 			"price": 4000
-		}	
+		}
 	},
 	{
 		"className": "CardStack",
 		"data": {
 			"name": "Ereignisfeld"
-		}	
+		}
 	},
     {
 		"className": "Street",
