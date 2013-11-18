@@ -8,6 +8,6 @@ abstract public class Card {
 		this.data = data;
 	}
 	
-	abstract void execute();
+	abstract void execute() throws Exception;
 
 }

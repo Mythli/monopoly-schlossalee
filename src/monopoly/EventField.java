@@ -2,7 +2,7 @@ package monopoly;
 
 public class EventField extends Field {
 	
-	EventField(PropertyData propertyData) {
+	public EventField(PropertyData propertyData) {
 		super(propertyData);
 	}
 

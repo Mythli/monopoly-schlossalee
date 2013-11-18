@@ -10,3 +10,10 @@
 /PropertyData.class
 /CardDataLoader.class
 /CardCollection.class
+/GoToRelative.class
+/MaintenanceCard.class
+/ChanceCardField.class
+/CommunityChestCardField.class
+/CardStack.class
+/GoToRelativeCard.class
+/GoToJailCard.class

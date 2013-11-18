@@ -1,8 +1,8 @@
 package cards_classes;
 
-public class GoToCard extends Card {
+public class GoToRelativeCard extends Card {
 	
-	GoToCard(CardData data) {
+	GoToRelativeCard(CardData data) {
 		super(data);
 	}
 	
@@ -10,10 +10,7 @@ public class GoToCard extends Card {
 		//System.out.println("GoToCard");
 		System.out.println(data.getText());
 		monopoly.Player currentPlayer = monopoly.Monopoly.getGameBoard().getCurrentPlayer();
-		
-		monopoly.Field goToField = monopoly.Monopoly.getGameBoard().getFieldByName(this.data.getTo());
-		
-		currentPlayer.move(goToField);
+		currentPlayer.move(this.data.getSteps());
 	}
 
 }

@@ -18,7 +18,7 @@ public class Player extends Participant {
 	}
 
 	/***
-	 * Gibt den Namen des Spielers zurück
+	 * Gibt den Namen des Spielers zurï¿½ck
 	 * 
 	 * @return
 	 */
@@ -36,7 +36,7 @@ public class Player extends Participant {
 	}
 
 	/***
-	 * Gibt das aktuelle Guthaben des Spielers zurück
+	 * Gibt das aktuelle Guthaben des Spielers zurï¿½ck
 	 */
 	public int getCurrentMoney() {
 		return currentMoney;
@@ -58,15 +58,15 @@ public class Player extends Participant {
 		} else {
 			// TODO: Eigene Exceptions (z.B. OutOfMoneyException)
 			throw new Exception(
-					"Nicht genügend Geld für die Transaktion vorhanden!");
+					"Nicht genï¿½gend Geld fï¿½r die Transaktion vorhanden!");
 		}
 	}
 
 	/***
-	 * Fügt eine bestimmte Menge Geld zum Guthaben des Spielers hinzu
+	 * Fï¿½gt eine bestimmte Menge Geld zum Guthaben des Spielers hinzu
 	 * 
 	 * @param amount
-	 *            Die Menge Geld, welche hinzugefügt wird
+	 *            Die Menge Geld, welche hinzugefï¿½gt wird
 	 */
 	public void addMoney(int amount) {
 		currentMoney += amount;
@@ -89,7 +89,7 @@ public class Player extends Participant {
 
 	/***
 	 * Gibt das aktuelle Field-Objekt, auf welchem sich der Spieler befindet
-	 * zurück
+	 * zurï¿½ck
 	 * 
 	 * @return
 	 */
@@ -113,9 +113,15 @@ public class Player extends Participant {
 	 */
 	public void move(int value) {
 		this.position += value;
-		int diff = Monopoly.getGameBoard().getAllFields().size() - this.position;
 
-		if (diff > 0)
-			this.position += diff;
+		if (this.position > 40) {
+			int diff = Monopoly.getGameBoard().getAllFields().size()
+					- this.position;
+			this.position = diff;
+		}
+	}
+	
+	public int getPosition(){
+		return this.position;
 	}
 }

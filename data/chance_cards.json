@@ -1,0 +1,114 @@
+[
+	{
+		"className": "GoToCard",
+		"data": {
+			"text": "Rücke vor bis zur Schlossallee.",
+			"to": "Schlossallee"
+		}
+	},
+	{
+		"className": "GoToRelativeCard",
+		"data": {
+			"text": "Gehe 3 Felder zurück.",
+			"steps": -3
+		}
+	},
+	{
+		"className": "GoToCard",
+		"data": {
+			"text": "Rücke vor bis zum Opernplatz. Wenn du über Los kommst ziehe DM 4000 ein.",
+			"to": "Opernplatz"
+		}
+	},
+	{
+		"className": "MaintenanceCard",
+		"data": {
+			"text": "Du wirst zu Strassenausbesserungsarbeiten herangezogen. Zahle für deine Häuser und Hotels -DM 800 je Haus -DM 2300 je Hotel an die Bank.",
+			"amount_hotel": 2300,
+			"amount_house": 800
+		}
+	},
+	{
+		"className": "MaintenanceCard",
+		"data": {
+			"text": "Lasse alle Deine Häuser renovieren Zahle an die Bank-für jedes Haus DM 500 -für jedes Hotel DM 2000",
+			"amount_hotel": 2000,
+			"amount_house": 500
+		}
+	},
+	{
+		"className": "TransactionCard",
+		"data": {
+			"text": "Zahle Schulgeld DM 3000.",
+			"amount": -3000
+		}
+	},
+	{
+		"className": "TransactionCard",
+		"data": {
+			"text": "Betrunken im Dienst. Strafe DM 400.",
+			"amount": -400
+		}
+	},
+	{
+		"className": "TransactionCard",
+		"data": {
+			"text": "Strafe für zu schnelles Fahren. DM 300.",
+			"amount": -300
+		}
+	},
+	{
+		"className": "TransactionCard",
+		"data": {
+			"text": "Miete und Anleihzinsen werden fällig. Die Bank zahlt Dir DM 3000.",
+			"amount": -3000
+		}
+	},
+	{
+		"className": "TransactionCard",
+		"data": {
+			"text": "Du hast in einem Kreuzworträtsel-Wettbewerb gewonnen. Ziehe DM 2000 ein.",
+			"amount": 2000
+		}
+	},
+	{
+		"className": "GoToCard",
+		"data": {
+			"text": "Mache einen Ausflug nach dem West-Bahnhof, und wenn du über Los kommst, ziehe DM 4000 ein.",
+			"to": "West-Bahnhof"
+		}
+	},
+	{
+		"className": "GoToCard",
+		"data": {
+			"text": "Rücke vor bis zur Seestrasse. Wenn du über Los kommst, ziehe DM 4000 ein.",
+			"to": "Seestrasse"
+		}
+	},
+	{
+		"className": "GoToJailCard",
+		"data": {
+			"text": "Gehe in das Gefängnis. Begib dich direkt dorthin. Gehe nicht über Los. Ziehe nicht DM 4000 ein."
+		}
+	},
+	{
+		"className": "GoToCard",
+		"data": {
+			"text": "Rücke bis auf Los vor.",
+			"to": "Start"
+		}
+	},
+	{
+		"className": "GetOutOfJailCard",
+		"data": {
+			"text": "Du kommst aus dem Gefängnis frei. Diese Karte muss behalten werden, bis sie gebraucht oder verkauft wird."
+		}
+	},
+	{
+		"className": "TransactionCard",
+		"data": {
+			"text": "Die Bank zahlt Dir eine Dividende von DM 1000.",
+			"amount": 1000
+		}
+	}
+]

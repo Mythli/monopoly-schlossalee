@@ -11,15 +11,6 @@ import java.lang.reflect.Constructor;
 import java.util.ArrayList;
 import java.io.File;
 
-import monopoly.ActionField;
-import monopoly.CardStack;
-import monopoly.Field;
-import monopoly.Prison;
-import monopoly.PropertyData;
-import monopoly.SerializedField;
-import monopoly.Street;
-import monopoly.SupplyStation;
-import monopoly.TrainStation;
 
 public class CardDataLoader {
 	
@@ -47,6 +38,15 @@ public class CardDataLoader {
 				cards.add(new CollectMoneyCard(cardData));
 			else if (rawCard.className.equals("GetOutOfJailCard"))
 				cards.add(new GetOutOfJailCard(cardData));
+			else if (rawCard.className.equals("GoToRelativeCard"))
+				cards.add(new GoToRelativeCard(cardData));
+			else if (rawCard.className.equals("MaintenanceCard"))
+				cards.add(new MaintenanceCard(cardData));
+			else if (rawCard.className.equals("GoToJailCard"))
+				cards.add(new GoToJailCard(cardData));
+			else if (rawCard.className.equals("GetOutOfJailCard"))
+				cards.add(new GetOutOfJailCard(cardData));
+			
 			else
 				throw new Exception("Unknown card type " + rawCard.className);
 		}
