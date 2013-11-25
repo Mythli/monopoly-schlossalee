@@ -1,11 +1,14 @@
 package monopoly;
 
+import java.util.ArrayList;
+
 public class Player extends Participant {
 
 	private String name;
 	private int currentMoney;
 	private int position;
 	private boolean isInJail = false;
+	private int numberGetOutOfJailCards = 0;
 
 	/***
 	 * Erstellt eine Instanz der Klasse Player mit dem angegebenen Namen
@@ -103,7 +106,7 @@ public class Player extends Participant {
 	 * 
 	 * @param field
 	 */
-	public void move(Field field) {
+	public void move(Field field) throws Exception {
 		this.position = field.property.getPosition();
 		field.onEnter();
 	}
@@ -113,17 +116,32 @@ public class Player extends Participant {
 	 * 
 	 * @param value
 	 */
-	public void move(int value) {
+	public void move(int value) throws Exception {
 		int position = this.position + value % Monopoly.getGameBoard().getNumberOfFields();
 		this.move(Monopoly.getGameBoard().getField(position));
 	}
 	
-	public void moveTo(String name) {
+	public void moveTo(String name) throws Exception {
 		this.move(Monopoly.getGameBoard().getField(name));
 	}
 	
 	public int getPosition(){
 		return this.position;
+	}
+	
+	public ArrayList<PropertyField> getOwnedFields() {
+		ArrayList<PropertyField> ownedFields = new ArrayList<PropertyField>();
+		ArrayList<Field> allFields = Monopoly.getGameBoard().getAllFields();
+		
+		for (Field field : allFields) {
+			if (field.getClass().getName() == "PropertyField") {
+				PropertyField propertyField = (PropertyField) field;
+				if (propertyField.getOwner() == this)
+					ownedFields.add(propertyField);
+			}
+		}
+		
+		return ownedFields;
 	}
 	
 	public void goToJail() {
@@ -136,6 +154,15 @@ public class Player extends Participant {
 	
 	public boolean isInJail() {
 		return this.isInJail;
+	}
+	
+	public void addGetOutOfJailCard() {
+		numberGetOutOfJailCards++;
+	}
+	
+	public void removeGetOutOfJailCard() {
+		if (numberGetOutOfJailCards > 0)
+			numberGetOutOfJailCards--;
 	}
 	
 }

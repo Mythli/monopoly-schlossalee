@@ -7,8 +7,7 @@ public class PayOrDrawCard extends Card {
 	}
 	
 	public void execute() {
-		//System.out.println("PayOrDrawCard");
-		System.out.println(data.getText());
+
 	}
 
 }

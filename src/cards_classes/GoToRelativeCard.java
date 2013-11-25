@@ -6,9 +6,7 @@ public class GoToRelativeCard extends Card {
 		super(data);
 	}
 	
-	public void execute() {
-		//System.out.println("GoToCard");
-		System.out.println(data.getText());
+	public void execute() throws Exception {
 		monopoly.Player currentPlayer = monopoly.Monopoly.getGameBoard().getCurrentPlayer();
 		currentPlayer.move(this.data.getSteps());
 	}

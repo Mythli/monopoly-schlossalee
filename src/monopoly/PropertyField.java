@@ -5,6 +5,8 @@ import java.util.ArrayList;
 public class PropertyField extends Field implements ITransactionField {
 
 	Player owner;
+	private int numberHouses = 0;
+	private int numberHotels = 0;	
 
 	public PropertyField(PropertyData propertyData) {
 		super(propertyData);
@@ -100,4 +102,24 @@ public class PropertyField extends Field implements ITransactionField {
 	public int countPlayersGroupField(Player player, PropertyGroup group) {
 		return getPlayersGroupFields(player, group).size();
 	}
+
+	public int getNumberHouses() {
+		return numberHouses;
+	}
+	
+	public boolean hasHotel() {
+		return numberHotels == 1;
+	}
+
+	public void addHouse() throws Exception {
+		if (numberHotels == 1)
+			throw new Exception("Grundstück voll!");
+		
+		if (numberHouses == 4) {
+			numberHouses = 0;
+			numberHotels = 1;
+		} else
+			this.numberHouses++;
+	}
+
 }
