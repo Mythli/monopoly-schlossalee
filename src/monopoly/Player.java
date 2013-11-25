@@ -5,6 +5,7 @@ public class Player extends Participant {
 	private String name;
 	private int currentMoney;
 	private int position;
+	private boolean isInJail = false;
 
 	/***
 	 * Erstellt eine Instanz der Klasse Player mit dem angegebenen Namen
@@ -104,6 +105,7 @@ public class Player extends Participant {
 	 */
 	public void move(Field field) {
 		this.position = field.property.getPosition();
+		field.onEnter();
 	}
 
 	/***
@@ -112,16 +114,28 @@ public class Player extends Participant {
 	 * @param value
 	 */
 	public void move(int value) {
-		this.position += value;
-
-		if (this.position > 40) {
-			int diff = Monopoly.getGameBoard().getAllFields().size()
-					- this.position;
-			this.position = diff;
-		}
+		int position = this.position + value % Monopoly.getGameBoard().getNumberOfFields();
+		this.move(Monopoly.getGameBoard().getField(position));
+	}
+	
+	public void moveTo(String name) {
+		this.move(Monopoly.getGameBoard().getField(name));
 	}
 	
 	public int getPosition(){
 		return this.position;
 	}
+	
+	public void goToJail() {
+		this.isInJail = true;
+	}
+	
+	public void getOutOfJail() {
+		this.isInJail = false;
+	}
+	
+	public boolean isInJail() {
+		return this.isInJail;
+	}
+	
 }
