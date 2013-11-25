@@ -36,8 +36,21 @@ public class Test {
 		ckl.move(Monopoly.getGameBoard().getAllFields().get(0));
 		ckl.move(Monopoly.getGameBoard().getDice().getLastRoll());
 		
-		System.out.println("Position CKL (nachher): " + ckl.getPosition());
-		System.out.println("Position CKL (nachher): " + ckl.getPosition());
+		System.out.println("Position CKL (nachher - Methode 1): " + ckl.getPosition());
+		System.out.println("Position CKL (nachher - Methode 2): " + ckl.getCurrentField().property.getPosition());
+		
+		System.out.println("----");
+		
+		ckl.move(Monopoly.getGameBoard().getAllFields().get(39));
+		ckl.move(5);
+		
+		ckl.getCurrentField().onEnter();
+		//if (ckl.getCurrentField().property.getTransactionAmount() ) {}
+		
+		
+		
+		
+		
 	}
 
 }

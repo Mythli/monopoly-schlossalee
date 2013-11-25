@@ -117,7 +117,7 @@ public class Player extends Participant {
 		if (this.position > 40) {
 			int diff = Monopoly.getGameBoard().getAllFields().size()
 					- this.position;
-			this.position = diff;
+			this.position = diff * -1;
 		}
 	}
 	
