@@ -45,6 +45,10 @@ public class GameBoard {
 	public ArrayList<Field> getAllFields() {
 		return fields;
 	}
+	
+	public int getNumberOfFields() {
+		return fields.size();
+	}
 
 	/***
 	 * F�gt den angegebenen Spieler dem Spielfeld hinzu
@@ -83,7 +87,11 @@ public class GameBoard {
 		return null;
 	}
 	
-	public Field getFieldByName(String name) {
+	public Field getField(int position) {
+		return fields.get(position);
+	}
+	
+	public Field getField(String name) {
 		return specialFields.get(name);
 	}
 }
