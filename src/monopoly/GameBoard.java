@@ -9,12 +9,14 @@ public class GameBoard {
 	private ArrayList<Field> fields = new ArrayList<Field>();
 	HashMap<String, Field> specialFields = new HashMap<String, Field>();
 	private int currentPlayer;
-	private Dice dice = new Dice();;
+	private Dice dice = new Dice();
+	private Bank bank = new Bank();
 
 	/***
 	 * Erstellt eine Instanz der Klasse GameBoard
 	 */
-	public GameBoard(ArrayList<Field> fields, HashMap<String, Field> specialFields) {
+	public GameBoard(ArrayList<Field> fields,
+			HashMap<String, Field> specialFields) {
 		this.fields = fields;
 		this.specialFields = specialFields;
 	}
@@ -26,6 +28,10 @@ public class GameBoard {
 	 */
 	public Dice getDice() {
 		return dice;
+	}
+
+	public Bank getBank() {
+		return bank;
 	}
 
 	/***
@@ -82,8 +88,26 @@ public class GameBoard {
 				return p;
 		return null;
 	}
-	
+
 	public Field getFieldByName(String name) {
 		return specialFields.get(name);
 	}
+
+	public Field getFieldById(int id) {
+		return fields.get(id);
+	}
+
+	public ArrayList<Street> getStreetsByGroup(PropertyGroup group) {
+		ArrayList<Street> streets = new ArrayList<Street>();
+
+		for (Field field : this.getAllFields()) {
+			Street street = (Street) (field);
+
+			if (street.getGroup() == group) {
+				streets.add(street);
+			}
+		}
+		return streets;
+	}
+
 }

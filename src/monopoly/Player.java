@@ -1,5 +1,8 @@
 package monopoly;
 
+import java.util.ArrayList;
+import java.util.Hashtable;
+
 public class Player extends Participant {
 
 	private String name;
@@ -58,7 +61,7 @@ public class Player extends Participant {
 		} else {
 			// TODO: Eigene Exceptions (z.B. OutOfMoneyException)
 			throw new Exception(
-					"Nicht gen�gend Geld f�r die Transaktion vorhanden!");
+					"Nicht genügend Geld für die Transaktion vorhanden!");
 		}
 	}
 
@@ -120,8 +123,48 @@ public class Player extends Participant {
 			this.position = diff * -1;
 		}
 	}
-	
-	public int getPosition(){
+
+	public int getPosition() {
 		return this.position;
 	}
+
+	public void buyCurrentField() throws Exception {
+		PropertyField field = (PropertyField) (this.getCurrentField());
+
+		if (field.isBuyable()) {
+			// Das Feld gehört den Spieler bereits
+			if (field.getOwner().equals(this)) {
+				// Upgrade
+				if (field.groupComplete()) {
+					// Alle Strassen der Gruppe
+					PropertyGroup group = field.getGroup();
+
+					ArrayList<Street> streets = Monopoly.getGameBoard()
+							.getStreetsByGroup(group);
+
+					Hashtable<Street, Integer> houesCounts = new Hashtable<Street, Integer>();
+					for (Street street : streets) {
+						// Häuser zählen
+						houesCounts.put(street, street.getHouseCount());
+					}
+				} else {
+					throw new Exception(
+							"Die Gruppe ist noch nicht vollständig im Besitz.");
+				}
+			} else if (!field.getOwner().equals(null)) {
+				// Gehört bereits einen Spieler
+				throw new Exception("Das aktuelle Spielfeld gehört bereits "
+						+ field.getOwner().getName() + ".");
+			} else {
+				// Neukauf
+				transferMoneyToParticipant(Monopoly.getGameBoard().getBank(),
+						field.getPrice());
+				field.setOwner(this);
+			}
+		} else {
+			throw new Exception(
+					"Das aktuelle Spielfeld ist nicht zu verkaufen.");
+		}
+	}
+
 }
