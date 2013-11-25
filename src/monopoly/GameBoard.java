@@ -1,19 +1,22 @@
 package monopoly;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class GameBoard {
 
 	private ArrayList<Player> players = new ArrayList<Player>();
 	private ArrayList<Field> fields = new ArrayList<Field>();
+	HashMap<String, Field> specialFields = new HashMap<String, Field>();
 	private int currentPlayer;
 	private Dice dice = new Dice();;
 
 	/***
 	 * Erstellt eine Instanz der Klasse GameBoard
 	 */
-	public GameBoard(ArrayList<Field> fields) {
+	public GameBoard(ArrayList<Field> fields, HashMap<String, Field> specialFields) {
 		this.fields = fields;
+		this.specialFields = specialFields;
 	}
 
 	/***
@@ -78,5 +81,9 @@ public class GameBoard {
 			if (p.getName().equals(name))
 				return p;
 		return null;
+	}
+	
+	public Field getFieldByName(String name) {
+		return specialFields.get(name);
 	}
 }

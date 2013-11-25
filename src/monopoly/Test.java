@@ -11,7 +11,7 @@ public class Test {
 
 		System.out.println("Spieler: ");
 		for (Player p : Monopoly.getGameBoard().getPlayers())
-			System.out.println(p.getName() + " - " + p.getCurrentMoney() + " ï¿½");
+			System.out.println(p.getName() + " - " + p.getCurrentMoney() + " €");
 
 		Monopoly.getGameBoard().getCurrentPlayer().transferMoneyToParticipant(Monopoly.getGameBoard().getPlayerByName("CKL"), 1500);
 		
@@ -27,6 +27,7 @@ public class Test {
 					+ f.property.getPosition() + ", " + f.property.getPrice()
 					+ ", " + f.property.getPropertyGroup() + ", "
 					+ f.property.getRentPrices());
+<<<<<<< HEAD
 	
 		
 		
@@ -51,6 +52,8 @@ public class Test {
 		
 		
 		
+=======
+>>>>>>> a12f712ea0400f9eb4671f6f8673b531a1ba0035
 	}
 
 }

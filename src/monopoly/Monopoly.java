@@ -22,10 +22,15 @@ public class Monopoly {
 			System.out.println(o);
 		*/
 		
-		CardDataLoader.load("community_chest_cards.json");
+		//cards_classes.CardDataLoader.load("community_chest_cards.json");
+		cards_classes.CardCollection c = cards_classes.CardDataLoader.load("chance_cards.json");
 
+		for (cards_classes.Card o : c.cards)
+		{
+			System.out.println(o.getClass());
+			
 		
-		
+		}
 	}	
 
 }

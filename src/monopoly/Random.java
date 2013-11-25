@@ -6,7 +6,7 @@ public class Random {
 	
 	private SecureRandom generator;
 	
-	Random() {
+	public Random() {
 		generator = new SecureRandom();
 	}
 	

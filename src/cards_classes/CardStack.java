@@ -1,13 +1,14 @@
-package monopoly;
+package cards_classes;
 
 import java.util.ArrayList;
 
-public class CardStack extends EventField {	
+
+public class CardStack extends monopoly.EventField {	
 	
 	ArrayList<Card> cards;
-	PropertyData propertyData;
+	monopoly.PropertyData propertyData;
 	
-	CardStack(PropertyData propertyData) {
+	public CardStack(monopoly.PropertyData propertyData) {
 		super(propertyData);
 	}
 	
