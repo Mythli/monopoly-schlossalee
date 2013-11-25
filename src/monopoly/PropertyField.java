@@ -20,11 +20,11 @@ public class PropertyField extends Field implements ITransactionField{
 			 return true;
 		 return false;
 	 }
-	 protected Player getOwner ()
+	 public Player getOwner ()
 	 {
 			return this.owner; 
 	 }
-	 protected void setOwner (Player owner)
+	 public void setOwner (Player owner)
 	 {
 		 this.owner = owner;
 	 }
@@ -106,7 +106,7 @@ public class PropertyField extends Field implements ITransactionField{
 	 * Ermittelt die Anzahl der Gruppen eines Spielers
 	 * @param player (Der aktuelle Spieler, welches das Feld betritt)
 	 * @param propGroup (Die gesuchte Gruppe) 
-	 * @return Anzahl der Straßen einer Farbe
+	 * @return Anzahl der Straï¿½en einer Farbe
 	 */
 	public int countPlayersGroupField (Player player, PropertyGroup group)
 	{
