@@ -6,14 +6,9 @@ public class GoToCard extends Card {
 		super(data);
 	}
 	
-	public void execute() {
-		//System.out.println("GoToCard");
-		System.out.println(data.getText());
+	public void execute() throws Exception {
 		monopoly.Player currentPlayer = monopoly.Monopoly.getGameBoard().getCurrentPlayer();
-		
-		monopoly.Field goToField = monopoly.Monopoly.getGameBoard().getFieldByName(this.data.getTo());
-		
-		currentPlayer.move(goToField);
+		currentPlayer.moveTo(this.data.getTo());
 	}
 
 }

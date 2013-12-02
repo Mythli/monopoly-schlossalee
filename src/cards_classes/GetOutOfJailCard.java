@@ -1,5 +1,8 @@
 package cards_classes;
 
+import monopoly.Monopoly;
+import monopoly.Player;
+
 public class GetOutOfJailCard extends Card {
 	
 	GetOutOfJailCard(CardData data) {
@@ -7,8 +10,8 @@ public class GetOutOfJailCard extends Card {
 	}
 	
 	public void execute() {
-		//System.out.println("GetOutOfJailCard");
-		System.out.println(data.getText());
+		Player currentPlayer = Monopoly.getGameBoard().getCurrentPlayer();
+		currentPlayer.addGetOutOfJailCard();
 	}
 
 }

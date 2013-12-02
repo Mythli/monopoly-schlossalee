@@ -7,12 +7,8 @@ public class GoToJailCard extends Card {
 	}
 	
 	public void execute() {
-		//System.out.println("GoToCard");
-		System.out.println(data.getText());
-		
 		monopoly.Player currentPlayer = monopoly.Monopoly.getGameBoard().getCurrentPlayer();
-		
-		//currentPlayer.goToJail();
+		currentPlayer.goToJail();
 	}
 
 }

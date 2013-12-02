@@ -1,13 +1,14 @@
 package monopoly;
 
 import java.util.ArrayList;
-import java.util.Hashtable;
 
 public class Player extends Participant {
 
 	private String name;
 	private int currentMoney;
 	private int position;
+	private boolean isInJail = false;
+	private int numberGetOutOfJailCards = 0;
 
 	/***
 	 * Erstellt eine Instanz der Klasse Player mit dem angegebenen Namen
@@ -61,7 +62,7 @@ public class Player extends Participant {
 		} else {
 			// TODO: Eigene Exceptions (z.B. OutOfMoneyException)
 			throw new Exception(
-					"Nicht genügend Geld für die Transaktion vorhanden!");
+					"Nicht gen�gend Geld f�r die Transaktion vorhanden!");
 		}
 	}
 
@@ -105,8 +106,9 @@ public class Player extends Participant {
 	 * 
 	 * @param field
 	 */
-	public void move(Field field) {
+	public void move(Field field) throws Exception {
 		this.position = field.property.getPosition();
+		field.onEnter();
 	}
 
 	/***
@@ -114,57 +116,53 @@ public class Player extends Participant {
 	 * 
 	 * @param value
 	 */
-	public void move(int value) {
-		this.position += value;
-
-		if (this.position > 40) {
-			int diff = Monopoly.getGameBoard().getAllFields().size()
-					- this.position;
-			this.position = diff * -1;
-		}
+	public void move(int value) throws Exception {
+		int position = this.position + value % Monopoly.getGameBoard().getNumberOfFields();
+		this.move(Monopoly.getGameBoard().getField(position));
 	}
-
-	public int getPosition() {
+	
+	public void moveTo(String name) throws Exception {
+		this.move(Monopoly.getGameBoard().getField(name));
+	}
+	
+	public int getPosition(){
 		return this.position;
 	}
-
-	public void buyCurrentField() throws Exception {
-		PropertyField field = (PropertyField) (this.getCurrentField());
-
-		if (field.isBuyable()) {
-			// Das Feld gehört den Spieler bereits
-			if (field.getOwner().equals(this)) {
-				// Upgrade
-				if (field.groupComplete()) {
-					// Alle Strassen der Gruppe
-					PropertyGroup group = field.getGroup();
-
-					ArrayList<Street> streets = Monopoly.getGameBoard()
-							.getStreetsByGroup(group);
-
-					Hashtable<Street, Integer> houesCounts = new Hashtable<Street, Integer>();
-					for (Street street : streets) {
-						// Häuser zählen
-						houesCounts.put(street, street.getHouseCount());
-					}
-				} else {
-					throw new Exception(
-							"Die Gruppe ist noch nicht vollständig im Besitz.");
-				}
-			} else if (!field.getOwner().equals(null)) {
-				// Gehört bereits einen Spieler
-				throw new Exception("Das aktuelle Spielfeld gehört bereits "
-						+ field.getOwner().getName() + ".");
-			} else {
-				// Neukauf
-				transferMoneyToParticipant(Monopoly.getGameBoard().getBank(),
-						field.getPrice());
-				field.setOwner(this);
+	
+	public ArrayList<PropertyField> getOwnedFields() {
+		ArrayList<PropertyField> ownedFields = new ArrayList<PropertyField>();
+		ArrayList<Field> allFields = Monopoly.getGameBoard().getAllFields();
+		
+		for (Field field : allFields) {
+			if (field.getClass().getName() == "PropertyField") {
+				PropertyField propertyField = (PropertyField) field;
+				if (propertyField.getOwner() == this)
+					ownedFields.add(propertyField);
 			}
-		} else {
-			throw new Exception(
-					"Das aktuelle Spielfeld ist nicht zu verkaufen.");
 		}
+		
+		return ownedFields;
 	}
-
+	
+	public void goToJail() {
+		this.isInJail = true;
+	}
+	
+	public void getOutOfJail() {
+		this.isInJail = false;
+	}
+	
+	public boolean isInJail() {
+		return this.isInJail;
+	}
+	
+	public void addGetOutOfJailCard() {
+		numberGetOutOfJailCards++;
+	}
+	
+	public void removeGetOutOfJailCard() {
+		if (numberGetOutOfJailCards > 0)
+			numberGetOutOfJailCards--;
+	}
+	
 }

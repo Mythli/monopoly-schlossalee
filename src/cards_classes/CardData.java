@@ -33,19 +33,19 @@ public class CardData {
 		this.to = to;
 	}
 
-	public int getAmount_hotel() {
+	public int getAmountHotel() {
 		return amount_hotel;
 	}
 
-	public void setAmount_hotel(int amount_hotel) {
+	public void setAmountHotel(int amount_hotel) {
 		this.amount_hotel = amount_hotel;
 	}
 
-	public int getAmount_house() {
+	public int getAmountHouse() {
 		return amount_house;
 	}
 
-	public void setAmount_house(int amount_house) {
+	public void setAmountHouse(int amount_house) {
 		this.amount_house = amount_house;
 	}
 

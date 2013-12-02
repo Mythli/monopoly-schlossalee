@@ -11,7 +11,7 @@ public class Field {
 		property = propertyData;
 	}
 
-	public void onEnter ()
+	public void onEnter() throws Exception
 	{
 		//Mach nichts!
 	}
