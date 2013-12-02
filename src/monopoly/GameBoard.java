@@ -10,6 +10,7 @@ public class GameBoard {
 	HashMap<String, Field> specialFields = new HashMap<String, Field>();
 	private int currentPlayer;
 	private Dice dice = new Dice();
+	private Bank bank = new Bank();
 	private cards_classes.CardCollection chanceCardStack;
 	private cards_classes.CardCollection communityChestCardStack;
 
@@ -30,6 +31,10 @@ public class GameBoard {
 	 */
 	public Dice getDice() {
 		return dice;
+	}
+	
+	public Bank getBank() {
+		return bank;
 	}
 
 	/***
@@ -52,6 +57,14 @@ public class GameBoard {
 	
 	public int getNumberOfFields() {
 		return fields.size();
+	}
+
+	public Field getFieldByName(String name) {
+		return specialFields.get(name);
+	}
+
+	public Field getFieldById(int id) {
+		return fields.get(id);
 	}
 
 	/***
@@ -104,6 +117,19 @@ public class GameBoard {
 	
 	public cards_classes.CardCollection getChanceCardStack() {
 		return chanceCardStack;
+	}
+	
+	public ArrayList<Street> getStreetsByGroup(PropertyGroup group) {
+		ArrayList<Street> streets = new ArrayList<Street>();
+
+		for (Field field : this.getAllFields()) {
+			Street street = (Street) (field);
+
+			if (street.getGroup() == group) {
+				streets.add(street);
+			}
+		}
+		return streets;
 	}
 	
 }
