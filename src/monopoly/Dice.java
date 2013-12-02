@@ -1,7 +1,5 @@
 package monopoly;
 
-import java.util.Random;
-
 public class Dice {
 	private Random rnd = new Random();
 	private boolean isPair;
@@ -16,14 +14,14 @@ public class Dice {
 	}
 
 	/***
-	 * Rollt das Würfelpaar
+	 * Rollt das WÃ¼rfelpaar
 	 * @return
 	 */
 	public int roll() {
 		isPair = false;
 
-		int dice1 = rnd.nextInt(5) + 1;
-		int dice2 = rnd.nextInt(5) + 1;
+		int dice1 = rnd.getInt(5);
+		int dice2 = rnd.getInt(5);
 
 		if (dice1 == dice2)
 			isPair = true;
@@ -33,7 +31,7 @@ public class Dice {
 	}
 	
 	/***
-	 * Gibt den Wert des letzten Wurfs zurück
+	 * Gibt den Wert des letzten Wurfs zurÃ¼ck
 	 * @return
 	 */
 	public int getLastRoll() {

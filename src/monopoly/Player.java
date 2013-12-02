@@ -160,9 +160,33 @@ public class Player extends Participant {
 		numberGetOutOfJailCards++;
 	}
 	
+	public boolean hasGetOutOfJailCard() {
+		return numberGetOutOfJailCards > 0;
+	}
+	
 	public void removeGetOutOfJailCard() {
 		if (numberGetOutOfJailCards > 0)
 			numberGetOutOfJailCards--;
+	}
+	
+	// TODO
+	private boolean USE_GET_OUT_OF_JAIL_CARD() {
+		return true;
+	}
+	
+	public void makeMove() throws Exception {
+		boolean move = true;
+		if (isInJail()) {
+			if (hasGetOutOfJailCard() && USE_GET_OUT_OF_JAIL_CARD()) {
+				getOutOfJail();
+				removeGetOutOfJailCard();
+			} else
+				move = false;			
+		}
+		if (move) {
+			int moveAmount = Monopoly.getGameBoard().getDice().roll();
+			move(moveAmount);
+		}
 	}
 	
 }
