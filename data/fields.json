@@ -24,7 +24,7 @@
 		}
     },
 	{
-		"className": "CardStack",
+		"className": "CardStackField",
 		"data": {
 			"name": "Gemeinschaftsfeld"
 		}
@@ -80,7 +80,7 @@
 		}
     },
 	{
-		"className": "CardStack",
+		"className": "CardStackField",
 		"data": {
 			"name": "Ereignisfeld"
 		}
@@ -216,7 +216,7 @@
 		}
     },
 	{
-		"className": "CardStack",
+		"className": "CardStackField",
 		"data": {
 			"name": "Gemeinschaftsfeld"
 		}	
@@ -282,7 +282,7 @@
 		}
     },
 	{
-		"className": "CardStack",
+		"className": "CardStackField",
 		"data": {
 			"name": "Ereignisfeld"
 		}	
@@ -434,7 +434,7 @@
 		}
     },
 	{
-		"className": "CardStack",
+		"className": "CardStackField",
 		"data": {
 			"name": "Gemeinschaftsfeld"
 		}	
@@ -465,7 +465,7 @@
 		}	
 	},
 	{
-		"className": "CardStack",
+		"className": "CardStackField",
 		"data": {
 			"name": "Ereignisfeld"
 		}	
