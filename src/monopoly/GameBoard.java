@@ -88,6 +88,10 @@ public class GameBoard {
 				return p;
 		return null;
 	}
+	
+	public int getNumberOfFields() {
+		return fields.size();
+	}
 
 	public Field getFieldByName(String name) {
 		return specialFields.get(name);
@@ -96,7 +100,15 @@ public class GameBoard {
 	public Field getFieldById(int id) {
 		return fields.get(id);
 	}
-
+	
+	public Field getField(int position) {
+		return fields.get(position);
+	}
+	
+	public Field getField(String name) {
+		return specialFields.get(name);
+	}
+	
 	public ArrayList<Street> getStreetsByGroup(PropertyGroup group) {
 		ArrayList<Street> streets = new ArrayList<Street>();
 
@@ -109,5 +121,7 @@ public class GameBoard {
 		}
 		return streets;
 	}
+	
+
 
 }
