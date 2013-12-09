@@ -9,7 +9,7 @@ public class MaintenanceCard extends Card {
 		super(data);
 	}
 	
-	public void execute() {
+	public void execute() throws Exception {
 		int amountToPay = 0;
 		
 		Player currentPlayer = Monopoly.getGameBoard().getCurrentPlayer();
