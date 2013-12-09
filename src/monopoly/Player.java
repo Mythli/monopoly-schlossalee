@@ -117,22 +117,23 @@ public class Player extends Participant {
 	 * @param value
 	 */
 	public void move(int value) throws Exception {
-		int position = this.position + value % Monopoly.getGameBoard().getNumberOfFields();
+		int position = this.position + value
+				% Monopoly.getGameBoard().getNumberOfFields();
 		this.move(Monopoly.getGameBoard().getField(position));
 	}
-	
+
 	public void moveTo(String name) throws Exception {
 		this.move(Monopoly.getGameBoard().getField(name));
 	}
-	
-	public int getPosition(){
+
+	public int getPosition() {
 		return this.position;
 	}
-	
+
 	public ArrayList<PropertyField> getOwnedFields() {
 		ArrayList<PropertyField> ownedFields = new ArrayList<PropertyField>();
 		ArrayList<Field> allFields = Monopoly.getGameBoard().getAllFields();
-		
+
 		for (Field field : allFields) {
 			if (field.getClass().getName() == "PropertyField") {
 				PropertyField propertyField = (PropertyField) field;
@@ -140,40 +141,40 @@ public class Player extends Participant {
 					ownedFields.add(propertyField);
 			}
 		}
-		
+
 		return ownedFields;
 	}
-	
+
 	public void goToJail() {
 		this.isInJail = true;
 	}
-	
+
 	public void getOutOfJail() {
 		this.isInJail = false;
 	}
-	
+
 	public boolean isInJail() {
 		return this.isInJail;
 	}
-	
+
 	public void addGetOutOfJailCard() {
 		numberGetOutOfJailCards++;
 	}
-	
+
 	public boolean hasGetOutOfJailCard() {
 		return numberGetOutOfJailCards > 0;
 	}
-	
+
 	public void removeGetOutOfJailCard() {
 		if (numberGetOutOfJailCards > 0)
 			numberGetOutOfJailCards--;
 	}
-	
+
 	// TODO
 	private boolean USE_GET_OUT_OF_JAIL_CARD() {
 		return true;
 	}
-	
+
 	public void makeMove() throws Exception {
 		boolean move = true;
 		if (isInJail()) {
@@ -181,12 +182,33 @@ public class Player extends Participant {
 				getOutOfJail();
 				removeGetOutOfJailCard();
 			} else
-				move = false;			
+				move = false;
 		}
 		if (move) {
 			int moveAmount = Monopoly.getGameBoard().getDice().roll();
 			move(moveAmount);
 		}
 	}
-	
+
+	public void buyField() throws Exception {
+		PropertyField currentField = (PropertyField) Monopoly.getGameBoard()
+				.getField(this.position);
+		this.removeMoney(currentField.property.getPrice());
+		currentField.owner = this;
+	}
+
+	public void buyHouse() throws Exception {
+		PropertyField currentField = (PropertyField) Monopoly.getGameBoard()
+				.getField(this.position);
+		this.removeMoney(currentField.property.getHousePrice());
+		currentField.addHouse();
+	}
+
+	public void buyHotel() throws Exception {
+		PropertyField currentField = (PropertyField) Monopoly.getGameBoard()
+				.getField(this.position);
+		this.removeMoney(currentField.property.getHousePrice());
+		currentField.addHouse();
+	}
+
 }

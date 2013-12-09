@@ -3,6 +3,12 @@ package monopoly;
 public class Test {
 
 	static void test() throws Exception {
+		
+		Player player1 = new Player("Friedhelm");
+		
+	//	Monopoly.getGameBoard().getBank().transferMoneyToParticipant(new , amount);
+		
+		/*
 		Monopoly.getGameBoard().addPlayer(new Player("TRO"));
 		Monopoly.getGameBoard().addPlayer(new Player("CKL"));
 		System.out.println("Roll: " + Monopoly.getGameBoard().getDice().roll());
@@ -42,6 +48,8 @@ public class Test {
 					+ ", " + f.property.getPropertyGroup() + ", "
 					+ f.property.getRentPrices());
 
+
+		*/
 	}
 
 }
