@@ -32,8 +32,8 @@ public class DataLoader {
 				Street street = new Street(data);
 				fields.add(street);
 				specialFields.put(data.getName(), street);
-			} else if (rawField.className.equals("CardStack"))
-				fields.add(new cards_classes.CardStack(data));
+			} else if (rawField.className.equals("CardStackField"))
+				fields.add(new cards_classes.CardStackField(data));
 			else if (rawField.className.equals("ActionField"))
 				fields.add(new ActionField(data));
 			else if (rawField.className.equals("Trainstation")) {

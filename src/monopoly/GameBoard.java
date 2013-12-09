@@ -11,14 +11,17 @@ public class GameBoard {
 	private int currentPlayer;
 	private Dice dice = new Dice();
 	private Bank bank = new Bank();
+	private cards_classes.CardCollection chanceCardStack;
+	private cards_classes.CardCollection communityChestCardStack;
 
 	/***
 	 * Erstellt eine Instanz der Klasse GameBoard
 	 */
-	public GameBoard(ArrayList<Field> fields,
-			HashMap<String, Field> specialFields) {
+	public GameBoard(ArrayList<Field> fields, HashMap<String, Field> specialFields) throws Exception {
 		this.fields = fields;
 		this.specialFields = specialFields;
+		this.chanceCardStack = cards_classes.CardDataLoader.load("chance_cards.json");
+		this.communityChestCardStack = cards_classes.CardDataLoader.load("community_chest_cards.json");
 	}
 
 	/***
@@ -29,7 +32,7 @@ public class GameBoard {
 	public Dice getDice() {
 		return dice;
 	}
-
+	
 	public Bank getBank() {
 		return bank;
 	}
@@ -50,6 +53,18 @@ public class GameBoard {
 	 */
 	public ArrayList<Field> getAllFields() {
 		return fields;
+	}
+	
+	public int getNumberOfFields() {
+		return fields.size();
+	}
+
+	public Field getFieldByName(String name) {
+		return specialFields.get(name);
+	}
+
+	public Field getFieldById(int id) {
+		return fields.get(id);
 	}
 
 	/***
@@ -76,10 +91,9 @@ public class GameBoard {
 	/***
 	 * Beendet den Spielzug des aktuellen Spielers
 	 */
-	public void endMove() {
-		currentPlayer++;
-		if (currentPlayer > players.size() - 1)
-			currentPlayer = 0;
+	public void makeMove() throws Exception {
+		getCurrentPlayer().makeMove();
+		currentPlayer = (currentPlayer + 1) % players.size();
 	}
 
 	public Player getPlayerByName(String name) {
@@ -109,6 +123,14 @@ public class GameBoard {
 		return specialFields.get(name);
 	}
 
+	public cards_classes.CardCollection getCommunityChestCardStack() {
+		return communityChestCardStack;
+	}
+	
+	public cards_classes.CardCollection getChanceCardStack() {
+		return chanceCardStack;
+	}
+	
 	public ArrayList<Street> getStreetsByGroup(PropertyGroup group) {
 		ArrayList<Street> streets = new ArrayList<Street>();
 

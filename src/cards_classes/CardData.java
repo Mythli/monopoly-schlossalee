@@ -5,8 +5,8 @@ public class CardData {
 	private String text;
 	private int amount;
 	private String to;
-	private int amount_hotel;
-	private int amount_house;
+	private int amountHotel;
+	private int amountHouse;
 	private int steps;
 	
 	public String getText() {
@@ -34,19 +34,19 @@ public class CardData {
 	}
 
 	public int getAmountHotel() {
-		return amount_hotel;
+		return amountHotel;
 	}
 
 	public void setAmountHotel(int amount_hotel) {
-		this.amount_hotel = amount_hotel;
+		this.amountHotel = amount_hotel;
 	}
 
 	public int getAmountHouse() {
-		return amount_house;
+		return amountHouse;
 	}
 
 	public void setAmountHouse(int amount_house) {
-		this.amount_house = amount_house;
+		this.amountHouse = amount_house;
 	}
 
 	public int getSteps() {

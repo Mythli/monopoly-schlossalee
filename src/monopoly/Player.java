@@ -67,19 +67,12 @@ public class Player extends Participant {
 	}
 
 	/***
-	 * Fügt eine bestimmte Menge Geld zum Guthaben des Spielers hinzu
+	 * F�gt eine bestimmte Menge Geld zum Guthaben des Spielers hinzu
 	 * 
 	 * @param amount
-	 *            Die Menge Geld, welche hinzugefügt wird
-	 * @throws Exception
+	 *            Die Menge Geld, welche hinzugef�gt wird
 	 */
-	public void addMoney(int amount) throws Exception {
-		if (amount < 0) {
-			if (currentMoney + amount < 0) {
-				throw new Exception(
-						"Nicht genug Geld fuer die Transaktion vorhanden!");
-			}
-		}
+	public void addMoney(int amount) {
 		currentMoney += amount;
 	}
 
@@ -91,9 +84,8 @@ public class Player extends Participant {
 	 */
 	public void removeMoney(int amount) throws Exception {
 		if (amount > 0) {
-			addMoney(amount * -1);
+			addMoney(amount);
 		} else {
-
 			// TODO: Eigene Exceptions
 			throw new Exception("Man kann keinen negativen Betrag abziehen!");
 		}
@@ -125,23 +117,22 @@ public class Player extends Participant {
 	 * @param value
 	 */
 	public void move(int value) throws Exception {
-		int position = this.position + value
-				% Monopoly.getGameBoard().getNumberOfFields();
+		int position = this.position + value % Monopoly.getGameBoard().getNumberOfFields();
 		this.move(Monopoly.getGameBoard().getField(position));
 	}
-
+	
 	public void moveTo(String name) throws Exception {
 		this.move(Monopoly.getGameBoard().getField(name));
 	}
-
-	public int getPosition() {
+	
+	public int getPosition(){
 		return this.position;
 	}
-
+	
 	public ArrayList<PropertyField> getOwnedFields() {
 		ArrayList<PropertyField> ownedFields = new ArrayList<PropertyField>();
 		ArrayList<Field> allFields = Monopoly.getGameBoard().getAllFields();
-
+		
 		for (Field field : allFields) {
 			if (field.getClass().getName() == "PropertyField") {
 				PropertyField propertyField = (PropertyField) field;
@@ -149,29 +140,53 @@ public class Player extends Participant {
 					ownedFields.add(propertyField);
 			}
 		}
-
+		
 		return ownedFields;
 	}
-
+	
 	public void goToJail() {
 		this.isInJail = true;
 	}
-
+	
 	public void getOutOfJail() {
 		this.isInJail = false;
 	}
-
+	
 	public boolean isInJail() {
 		return this.isInJail;
 	}
-
+	
 	public void addGetOutOfJailCard() {
 		numberGetOutOfJailCards++;
 	}
-
+	
+	public boolean hasGetOutOfJailCard() {
+		return numberGetOutOfJailCards > 0;
+	}
+	
 	public void removeGetOutOfJailCard() {
 		if (numberGetOutOfJailCards > 0)
 			numberGetOutOfJailCards--;
 	}
-
+	
+	// TODO
+	private boolean USE_GET_OUT_OF_JAIL_CARD() {
+		return true;
+	}
+	
+	public void makeMove() throws Exception {
+		boolean move = true;
+		if (isInJail()) {
+			if (hasGetOutOfJailCard() && USE_GET_OUT_OF_JAIL_CARD()) {
+				getOutOfJail();
+				removeGetOutOfJailCard();
+			} else
+				move = false;			
+		}
+		if (move) {
+			int moveAmount = Monopoly.getGameBoard().getDice().roll();
+			move(moveAmount);
+		}
+	}
+	
 }

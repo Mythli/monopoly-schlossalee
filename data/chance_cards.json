@@ -24,16 +24,16 @@
 		"className": "MaintenanceCard",
 		"data": {
 			"text": "Du wirst zu Strassenausbesserungsarbeiten herangezogen. Zahle für deine Häuser und Hotels -DM 800 je Haus -DM 2300 je Hotel an die Bank.",
-			"amount_hotel": 2300,
-			"amount_house": 800
+			"amountHotel": 2300,
+			"amountHouse": 800
 		}
 	},
 	{
 		"className": "MaintenanceCard",
 		"data": {
 			"text": "Lasse alle Deine Häuser renovieren Zahle an die Bank-für jedes Haus DM 500 -für jedes Hotel DM 2000",
-			"amount_hotel": 2000,
-			"amount_house": 500
+			"amountHotel": 2000,
+			"amountHouse": 500
 		}
 	},
 	{

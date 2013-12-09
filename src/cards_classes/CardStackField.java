@@ -3,12 +3,13 @@ package cards_classes;
 import java.util.ArrayList;
 
 
-public class CardStack extends monopoly.EventField {	
+public class CardStackField extends monopoly.EventField {	
 	
 	ArrayList<Card> cards;
 	monopoly.PropertyData propertyData;
+	CardCollection cardCollection;
 	
-	public CardStack(monopoly.PropertyData propertyData) {
+	public CardStackField(monopoly.PropertyData propertyData) {
 		super(propertyData);
 	}
 	
@@ -16,12 +17,8 @@ public class CardStack extends monopoly.EventField {
 		this.cards = cards;		
 	}
 	
-	public void takeAction(int cardIndex) {
-		
-	}
-	
-	public void selectRandomCard() {
-		
+	public void onEnter() throws Exception {
+		cardCollection.drawCard();
 	}
 
 }
