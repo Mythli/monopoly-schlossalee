@@ -16,21 +16,6 @@ public class Monopoly {
 		initialize(); 
 		
 		Test.test();
-		
-		/*
-		for (Object o : gameboard.getAllFields())
-			System.out.println(o);
-		*/
-		
-		//cards_classes.CardDataLoader.load("community_chest_cards.json");
-		cards_classes.CardCollection c = cards_classes.CardDataLoader.load("chance_cards.json");
-
-		for (cards_classes.Card o : c.cards)
-		{
-			System.out.println(o.getClass());
-			
-		
-		}
 	}	
 
 }

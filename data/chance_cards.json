@@ -75,7 +75,7 @@
 		"className": "GoToCard",
 		"data": {
 			"text": "Mache einen Ausflug nach dem West-Bahnhof, und wenn du über Los kommst, ziehe DM 4000 ein.",
-			"to": "West-Bahnhof"
+			"to": "Westbahnhof"
 		}
 	},
 	{

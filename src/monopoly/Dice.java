@@ -20,8 +20,8 @@ public class Dice {
 	public int roll() {
 		isPair = false;
 
-		int dice1 = rnd.getInt(5);
-		int dice2 = rnd.getInt(5);
+		int dice1 = rnd.getInt(6) + 1;
+		int dice2 = rnd.getInt(6) + 1;
 
 		if (dice1 == dice2)
 			isPair = true;

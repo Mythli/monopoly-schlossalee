@@ -6,7 +6,7 @@ public class Bank extends Participant {
 		return 9999999;
 	}
 
-	public void transferMoneyToParticipant(Participant player, int amount) {
+	public void transferMoneyToParticipant(Participant player, int amount) throws Exception {
 		player.addMoney(amount);
 	}
 

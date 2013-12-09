@@ -13,13 +13,13 @@ public class GameBoard {
 	private Bank bank = new Bank();
 	private cards_classes.CardCollection chanceCardStack;
 	private cards_classes.CardCollection communityChestCardStack;
-
+	
 	private events.IAccountHandler accountHandler;
 	private events.IDiceHandler diceHandler;
 	private events.IMessageHandler messageHandler;
 	private events.IPlayerMovementHandler playerMovementHandler;
 	private events.IPurchaseHandler purchaseHandler;
-	
+
 	/***
 	 * Erstellt eine Instanz der Klasse GameBoard
 	 */
@@ -61,18 +61,6 @@ public class GameBoard {
 		return fields;
 	}
 	
-	public int getNumberOfFields() {
-		return fields.size();
-	}
-
-	public Field getFieldByName(String name) {
-		return specialFields.get(name);
-	}
-
-	public Field getFieldById(int id) {
-		return fields.get(id);
-	}
-
 	/***
 	 * F�gt den angegebenen Spieler dem Spielfeld hinzu
 	 * 
@@ -95,7 +83,7 @@ public class GameBoard {
 	}
 
 	/***
-	 * Startet den Spielzug des aktuellen Spielers
+	 * Beendet den Spielzug des aktuellen Spielers
 	 */
 	public void makeMove() throws Exception {
 		getCurrentPlayer().makeMove();
@@ -108,15 +96,27 @@ public class GameBoard {
 				return p;
 		return null;
 	}
-	
+
+	public int getNumberOfFields() {
+		return fields.size();
+	}
+
+	public Field getFieldByName(String name) {
+		return specialFields.get(name);
+	}
+
+	public Field getFieldById(int id) {
+		return fields.get(id);
+	}
+
 	public Field getField(int position) {
 		return fields.get(position);
 	}
-	
+
 	public Field getField(String name) {
 		return specialFields.get(name);
 	}
-	
+
 	public cards_classes.CardCollection getCommunityChestCardStack() {
 		return communityChestCardStack;
 	}
@@ -183,5 +183,5 @@ public class GameBoard {
 	public void playerBoughtHotel(Player player, PropertyField field) {
 		purchaseHandler.playerBoughtHotel(player, field);
 	}
-	
+
 }

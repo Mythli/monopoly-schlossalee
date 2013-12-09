@@ -12,9 +12,11 @@ public class CardCollection {
 		this.randomNumberGenerator = new monopoly.Random();
 	}
 	
-	public void drawCard() throws Exception {
+	public Card drawCard() throws Exception {
 		int index = randomNumberGenerator.getInt(this.cards.size() - 1);
 		cards.get(index).execute();
+		
+		return cards.get(index);
 	}
 
 }
