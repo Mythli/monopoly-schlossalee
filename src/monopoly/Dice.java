@@ -27,6 +27,9 @@ public class Dice {
 			isPair = true;
 		
 		lastRoll = dice1 + dice2;
+		
+		Monopoly.getGameBoard().diceRolled(lastRoll);
+		
 		return lastRoll;
 	}
 	

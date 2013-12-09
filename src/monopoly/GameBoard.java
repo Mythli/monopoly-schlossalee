@@ -14,6 +14,12 @@ public class GameBoard {
 	private cards_classes.CardCollection chanceCardStack;
 	private cards_classes.CardCollection communityChestCardStack;
 
+	private events.IAccountHandler accountHandler;
+	private events.IDiceHandler diceHandler;
+	private events.IMessageHandler messageHandler;
+	private events.IPlayerMovementHandler playerMovementHandler;
+	private events.IPurchaseHandler purchaseHandler;
+	
 	/***
 	 * Erstellt eine Instanz der Klasse GameBoard
 	 */
@@ -89,7 +95,7 @@ public class GameBoard {
 	}
 
 	/***
-	 * Beendet den Spielzug des aktuellen Spielers
+	 * Startet den Spielzug des aktuellen Spielers
 	 */
 	public void makeMove() throws Exception {
 		getCurrentPlayer().makeMove();
@@ -130,6 +136,52 @@ public class GameBoard {
 			}
 		}
 		return streets;
+	}
+	
+	// Event-Handler
+	
+	public void setAccountHandler(events.IAccountHandler accountHandler) {
+		this.accountHandler = accountHandler;
+	}
+
+	public void balanceChanged(Player player) {
+		accountHandler.balanceChanged(player);
+	}
+	
+	public void setDiceHandler(events.IDiceHandler diceHandler) {
+		this.diceHandler = diceHandler;
+	}
+
+	public void diceRolled(int number) {
+		diceHandler.diceRolled(number);
+	}
+	
+	public void setMessageHandler(events.IMessageHandler messageHandler) {
+		this.messageHandler = messageHandler;
+	}
+
+	public void prompt(String message) {
+		messageHandler.prompt(message);
+	}	
+	
+	public void setPlayerMovementHandler(events.IPlayerMovementHandler playerMovementHandler) {
+		this.playerMovementHandler = playerMovementHandler;
+	}
+
+	public void playerMoved(Player player, Field field) {
+		playerMovementHandler.playerMoved(player, field);
+	}
+	
+	public void setPurchaseHandler(events.IPurchaseHandler purchaseHandler) {
+		this.purchaseHandler = purchaseHandler;
+	}
+
+	public void playerBoughtHouse(Player player, PropertyField field) {
+		purchaseHandler.playerBoughtHouse(player, field);
+	}
+	
+	public void playerBoughtHotel(Player player, PropertyField field) {
+		purchaseHandler.playerBoughtHotel(player, field);
 	}
 	
 }
