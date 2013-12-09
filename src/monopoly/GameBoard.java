@@ -55,18 +55,6 @@ public class GameBoard {
 		return fields;
 	}
 	
-	public int getNumberOfFields() {
-		return fields.size();
-	}
-
-	public Field getFieldByName(String name) {
-		return specialFields.get(name);
-	}
-
-	public Field getFieldById(int id) {
-		return fields.get(id);
-	}
-
 	/***
 	 * F�gt den angegebenen Spieler dem Spielfeld hinzu
 	 * 
