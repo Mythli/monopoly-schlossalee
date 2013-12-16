@@ -74,6 +74,7 @@ public class Player extends Participant {
 	 */
 	public void addMoney(int amount) {
 		currentMoney += amount;
+		Monopoly.getGameBoard().balanceChanged(this);
 	}
 
 	/***
@@ -106,9 +107,10 @@ public class Player extends Participant {
 	 * 
 	 * @param field
 	 */
-	public void move(Field field) throws Exception {
+	public Field move(Field field) throws Exception {
 		this.position = field.property.getPosition();
 		field.onEnter();
+		return field;
 	}
 
 	/***
@@ -116,14 +118,14 @@ public class Player extends Participant {
 	 * 
 	 * @param value
 	 */
-	public void move(int value) throws Exception {
+	public Field move(int value) throws Exception {
 		int position = this.position + value
 				% Monopoly.getGameBoard().getNumberOfFields();
-		this.move(Monopoly.getGameBoard().getField(position));
+		return this.move(Monopoly.getGameBoard().getField(position));
 	}
 
-	public void moveTo(String name) throws Exception {
-		this.move(Monopoly.getGameBoard().getField(name));
+	public Field moveTo(String name) throws Exception {
+		return this.move(Monopoly.getGameBoard().getField(name));
 	}
 
 	public int getPosition() {
@@ -170,15 +172,10 @@ public class Player extends Participant {
 			numberGetOutOfJailCards--;
 	}
 
-	// TODO
-	private boolean USE_GET_OUT_OF_JAIL_CARD() {
-		return true;
-	}
-
 	public void makeMove() throws Exception {
 		boolean move = true;
 		if (isInJail()) {
-			if (hasGetOutOfJailCard() && USE_GET_OUT_OF_JAIL_CARD()) {
+			if (hasGetOutOfJailCard() && Monopoly.getGameBoard().prompt("Möchten Sie Ihre Gefängnis-frei-Karte einsetzen?")) {
 				getOutOfJail();
 				removeGetOutOfJailCard();
 			} else
@@ -186,7 +183,8 @@ public class Player extends Participant {
 		}
 		if (move) {
 			int moveAmount = Monopoly.getGameBoard().getDice().roll();
-			move(moveAmount);
+			Field target = move(moveAmount);
+			Monopoly.getGameBoard().playerMoved(this, target);
 		}
 	}
 
@@ -206,6 +204,7 @@ public class Player extends Participant {
 			throw new Exception("Grundstück gehört Spieler nicht.");
 		this.removeMoney(currentField.property.getHousePrice());
 		currentField.addHouse();
+		Monopoly.getGameBoard().playerBoughtHouse(this, currentField);
 	}
 
 	public void buyHotel() throws Exception {
@@ -215,6 +214,7 @@ public class Player extends Participant {
 			throw new Exception("Grundstück gehört Spieler nicht.");
 		this.removeMoney(currentField.property.getHousePrice());
 		currentField.addHouse();
+		Monopoly.getGameBoard().playerBoughtHotel(this, currentField);
 	}
 
 }

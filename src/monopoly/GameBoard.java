@@ -162,9 +162,10 @@ public class GameBoard {
 		this.messageHandler = messageHandler;
 	}
 
-	public void prompt(String message) {
-		if (messageHandler != null)
-			messageHandler.prompt(message);
+	public boolean prompt(String message) {
+		if (messageHandler == null)
+			throw new RuntimeException("Kein Eventhandler definiert.");
+		return messageHandler.prompt(message);		
 	}	
 	
 	public void setPlayerMovementHandler(events.IPlayerMovementHandler playerMovementHandler) {
