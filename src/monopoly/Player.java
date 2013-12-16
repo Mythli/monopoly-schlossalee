@@ -193,6 +193,8 @@ public class Player extends Participant {
 	public void buyField() throws Exception {
 		PropertyField currentField = (PropertyField) Monopoly.getGameBoard()
 				.getField(this.position);
+		if (currentField.owner != null)
+			throw new Exception("Grundstück hat schon Besitzer.");
 		this.removeMoney(currentField.property.getPrice());
 		currentField.owner = this;
 	}
@@ -200,6 +202,8 @@ public class Player extends Participant {
 	public void buyHouse() throws Exception {
 		PropertyField currentField = (PropertyField) Monopoly.getGameBoard()
 				.getField(this.position);
+		if (currentField.owner != this)
+			throw new Exception("Grundstück gehört Spieler nicht.");
 		this.removeMoney(currentField.property.getHousePrice());
 		currentField.addHouse();
 	}
@@ -207,6 +211,8 @@ public class Player extends Participant {
 	public void buyHotel() throws Exception {
 		PropertyField currentField = (PropertyField) Monopoly.getGameBoard()
 				.getField(this.position);
+		if (currentField.owner != this)
+			throw new Exception("Grundstück gehört Spieler nicht.");
 		this.removeMoney(currentField.property.getHousePrice());
 		currentField.addHouse();
 	}
