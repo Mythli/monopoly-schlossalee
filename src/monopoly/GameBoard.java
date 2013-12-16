@@ -145,7 +145,8 @@ public class GameBoard {
 	}
 
 	public void balanceChanged(Player player) {
-		accountHandler.balanceChanged(player);
+		if (accountHandler != null)
+			accountHandler.balanceChanged(player);
 	}
 	
 	public void setDiceHandler(events.IDiceHandler diceHandler) {
@@ -153,7 +154,8 @@ public class GameBoard {
 	}
 
 	public void diceRolled(int number) {
-		diceHandler.diceRolled(number);
+		if (diceHandler != null)
+			diceHandler.diceRolled(number);
 	}
 	
 	public void setMessageHandler(events.IMessageHandler messageHandler) {
@@ -161,7 +163,8 @@ public class GameBoard {
 	}
 
 	public void prompt(String message) {
-		messageHandler.prompt(message);
+		if (messageHandler != null)
+			messageHandler.prompt(message);
 	}	
 	
 	public void setPlayerMovementHandler(events.IPlayerMovementHandler playerMovementHandler) {
@@ -169,7 +172,8 @@ public class GameBoard {
 	}
 
 	public void playerMoved(Player player, Field field) {
-		playerMovementHandler.playerMoved(player, field);
+		if (playerMovementHandler != null)
+			playerMovementHandler.playerMoved(player, field);
 	}
 	
 	public void setPurchaseHandler(events.IPurchaseHandler purchaseHandler) {
@@ -177,11 +181,13 @@ public class GameBoard {
 	}
 
 	public void playerBoughtHouse(Player player, PropertyField field) {
-		purchaseHandler.playerBoughtHouse(player, field);
+		if (purchaseHandler != null)
+			purchaseHandler.playerBoughtHouse(player, field);
 	}
 	
 	public void playerBoughtHotel(Player player, PropertyField field) {
-		purchaseHandler.playerBoughtHotel(player, field);
+		if (purchaseHandler != null)
+			purchaseHandler.playerBoughtHotel(player, field);
 	}
 
 }
