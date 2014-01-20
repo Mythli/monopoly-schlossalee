@@ -15,4 +15,9 @@ public class Field {
 	{
 		//Mach nichts!
 	}
+	
+	public boolean isBuyable() {
+		return false;
+	}
+
 }

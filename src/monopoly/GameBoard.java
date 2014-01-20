@@ -8,7 +8,7 @@ public class GameBoard {
 	private ArrayList<Player> players = new ArrayList<Player>();
 	private ArrayList<Field> fields = new ArrayList<Field>();
 	HashMap<String, Field> specialFields = new HashMap<String, Field>();
-	private int currentPlayer;
+	private int currentPlayer = 0;
 	private Dice dice = new Dice();
 	private Bank bank = new Bank();
 	private cards_classes.CardCollection chanceCardStack;
@@ -86,6 +86,8 @@ public class GameBoard {
 	 * Beendet den Spielzug des aktuellen Spielers
 	 */
 	public void makeMove() throws Exception {
+		if (players.size() == 0)
+			throw new RuntimeException("Bitte Spieler hinzufügen");
 		getCurrentPlayer().makeMove();
 		currentPlayer = (currentPlayer + 1) % players.size();
 	}
