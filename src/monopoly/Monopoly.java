@@ -1,11 +1,15 @@
 package monopoly;
 
+import gui.MonopolyForm;
+
+
 public class Monopoly {
 	
 	private static GameBoard gameboard;
 	
 	private static void initialize() throws Exception {
 		gameboard = DataLoader.load();
+		
 	}
 	
 	public static GameBoard getGameBoard() {
@@ -16,6 +20,9 @@ public class Monopoly {
 		initialize(); 
 		
 		Test.test();
+		
+		MonopolyForm form = new MonopolyForm ();
+		form.start();
 	}	
 
 }
