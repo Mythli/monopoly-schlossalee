@@ -5,9 +5,9 @@ import java.util.ArrayList;
 
 public class CardStackField extends monopoly.EventField {	
 	
-	ArrayList<Card> cards;
-	monopoly.PropertyData propertyData;
-	CardCollection cardCollection;
+	public ArrayList<Card> cards;
+	public monopoly.PropertyData propertyData;
+	public CardCollection cardCollection;
 	
 	public CardStackField(monopoly.PropertyData propertyData) {
 		super(propertyData);

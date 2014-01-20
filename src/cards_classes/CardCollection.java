@@ -13,7 +13,7 @@ public class CardCollection {
 	}
 	
 	public Card drawCard() throws Exception {
-		int index = randomNumberGenerator.getInt(this.cards.size() - 1);
+		int index = randomNumberGenerator.getInt(this.cards.size());
 		cards.get(index).execute();
 		
 		return cards.get(index);

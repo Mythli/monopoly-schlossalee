@@ -11,7 +11,7 @@ public class Random {
 	}
 	
 	public int getInt(int upperLimit) {
-		return generator.nextInt(upperLimit + 1);		
+		return generator.nextInt(upperLimit);		
 	}
 
 }

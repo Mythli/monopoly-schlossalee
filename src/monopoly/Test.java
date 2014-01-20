@@ -4,8 +4,6 @@ public class Test {
 
 	static void test() throws Exception {
 		
-		Player player1 = new Player("Friedhelm");
-		
 	//	Monopoly.getGameBoard().getBank().transferMoneyToParticipant(new , amount);
 		
 		/*

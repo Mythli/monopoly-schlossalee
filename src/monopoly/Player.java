@@ -119,7 +119,7 @@ public class Player extends Participant {
 	 * @param value
 	 */
 	public Field move(int value) throws Exception {
-		int position = this.position + value
+		int position = (this.position + value)
 				% Monopoly.getGameBoard().getNumberOfFields();
 		return this.move(Monopoly.getGameBoard().getField(position));
 	}
@@ -175,7 +175,9 @@ public class Player extends Participant {
 	public void makeMove() throws Exception {
 		boolean move = true;
 		if (isInJail()) {
-			if (hasGetOutOfJailCard() && Monopoly.getGameBoard().prompt("Möchten Sie Ihre Gefängnis-frei-Karte einsetzen?")) {
+			if (hasGetOutOfJailCard()
+					&& Monopoly.getGameBoard().prompt(
+							"Möchten Sie Ihre Gefängnis-frei-Karte einsetzen?")) {
 				getOutOfJail();
 				removeGetOutOfJailCard();
 			} else
