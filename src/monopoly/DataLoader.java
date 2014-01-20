@@ -1,5 +1,7 @@
 package monopoly;
 
+import cards_classes.Card;
+
 import com.fasterxml.jackson.annotation.*;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
@@ -19,6 +21,9 @@ public class DataLoader {
 		ObjectMapper mapper = new ObjectMapper();
 		SerializedField[] rawFields = mapper.readValue(new File("data/fields.json"), SerializedField[].class);	
 		
+		cards_classes.CardCollection chanceCardStack = cards_classes.CardDataLoader.load("chance_cards.json");
+		cards_classes.CardCollection communityChestCardStack = cards_classes.CardDataLoader.load("community_chest_cards.json");
+		
 		int position = 0;
 		for (SerializedField rawField : rawFields) {			
 			PropertyData data = rawField.data;
@@ -27,9 +32,13 @@ public class DataLoader {
 				Street street = new Street(data);
 				fields.add(street);
 				specialFields.put(data.getName(), street);
-			} else if (rawField.className.equals("CardStackField"))
-				fields.add(new cards_classes.CardStackField(data));
-			else if (rawField.className.equals("ActionField"))
+			} else if (rawField.className.equals("CommunityChestCardField")) {
+				fields.add(new CommunityChestCardField(data));
+				
+			} else if (rawField.className.equals("ChanceCardField")) {				
+				fields.add(new ChanceCardField(data));	
+				
+			} else if (rawField.className.equals("ActionField"))
 				fields.add(new ActionField(data));
 			else if (rawField.className.equals("Trainstation")) {
 				TrainStation trainStation = new TrainStation(data);

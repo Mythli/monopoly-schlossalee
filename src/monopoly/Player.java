@@ -191,8 +191,7 @@ public class Player extends Participant {
 	}
 
 	public void buyField() throws Exception {
-		PropertyField currentField = (PropertyField) Monopoly.getGameBoard()
-				.getField(this.position);
+		PropertyField currentField = (PropertyField) getCurrentField();
 		if (currentField.owner != null)
 			throw new Exception("Grundstück hat schon Besitzer.");
 		this.removeMoney(currentField.property.getPrice());

@@ -19,7 +19,7 @@ public class Monopoly {
 	public static void main(String[] args) throws Exception {
 		initialize(); 
 		
-		Test.test();
+		//Test.test();
 		
 		MonopolyForm form = new MonopolyForm ();
 		form.start();

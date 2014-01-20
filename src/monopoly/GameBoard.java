@@ -25,9 +25,7 @@ public class GameBoard {
 	 */
 	public GameBoard(ArrayList<Field> fields, HashMap<String, Field> specialFields) throws Exception {
 		this.fields = fields;
-		this.specialFields = specialFields;
-		this.chanceCardStack = cards_classes.CardDataLoader.load("chance_cards.json");
-		this.communityChestCardStack = cards_classes.CardDataLoader.load("community_chest_cards.json");
+		this.specialFields = specialFields;		
 	}
 
 	/***

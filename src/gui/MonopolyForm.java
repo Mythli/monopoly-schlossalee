@@ -29,28 +29,15 @@ public class MonopolyForm implements events.IDiceHandler, events.IPlayerMovement
 		monopoly.getGameBoard().addPlayer(new Player("Jan"));
 	}
 	
-	public void start ()
+	public void start() throws Exception
 	{
 		addPlayers();
 		for(int zaehler = 1; zaehler < 20; zaehler++ )
 		{
-			
-			try {
-				monopoly.getGameBoard().makeMove();
-			} catch (Exception e) {
-				// TODO Auto-generated catch block
-				System.out.println(e.getMessage());
-			}
-			
+			monopoly.getGameBoard().makeMove();			
 			System.out.println("Spieler steht aktuell auf Feld " + monopoly.getGameBoard().getCurrentPlayer().getCurrentField().property.getName());
-			
-			try {
+			if (monopoly.getGameBoard().getCurrentPlayer().getCurrentField().isBuyable())
 				monopoly.getGameBoard().getCurrentPlayer().buyField();
-			} catch (Exception e) {
-				// TODO Auto-generated catch block
-				System.out.println(e.getMessage());
-			}
-			
 		}
 		
 	}
